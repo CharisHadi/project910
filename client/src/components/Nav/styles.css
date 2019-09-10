@@ -1,0 +1,33 @@
+#test, #learn, #home, #help {
+    color: white;
+    float: right;
+    font-family: 'Tajawal', sans-serif;
+}
+
+#navbarNavAltMarkup {
+    float: right;
+}
+
+.navbar-nav {
+    float: right;
+}
+
+.navbar-brand b {
+    font-family: 'DM Sans', sans-serif;
+    color: #FFFFFF;
+}
+
+a {
+    color: white;
+}
+
+nav {
+    background-color: #378C2E;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }

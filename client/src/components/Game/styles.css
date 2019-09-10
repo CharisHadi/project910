@@ -1,0 +1,75 @@
+.knowledge-test {
+    position: absolute;
+    top: 205%;
+    left: 10%;
+    background-color: #94ECBE;
+    height: 80%;
+    width: 80%;
+    margin-bottom: 5%;
+}
+
+#header {
+    text-align: center;
+    font-size: 48px;
+    color: #505050;
+    font-family: 'DM Sans', sans-serif; 
+    font-weight: bold;
+}
+
+#question {
+    padding: 20px 20px 50px 20px;
+    font-size: 28px;
+    color: #505050;
+    font-family: 'Tajawal', sans-serif;
+    text-align: center;
+}
+
+.answer {
+    padding: 10px 0px 10px 0px;
+    font-size: 18px;
+    color: #505050;
+    font-family: 'Tajawal', sans-serif;
+    text-align: center;
+    width: 100px;
+    display: block;
+    margin: 10px auto;
+    display: none;
+}
+
+button {
+    font-size: 18px;
+    color: #505050;
+    font-family: 'Tajawal', sans-serif;
+    text-align: center;
+    padding: 20px 0 20px 0;
+    width: 130px;
+    margin: 0 10px 0 10px;
+}
+
+.center {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#countDown {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    font-size: 28px;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+.results {
+    visibility: hidden;
+    font-size: 18px;
+    color: #505050;
+    font-family: 'DM Sans', sans-serif; 
+    padding: 20px 0 20px 0;
+    width: 130px;
+    margin: auto;
+    text-align: center;
+}

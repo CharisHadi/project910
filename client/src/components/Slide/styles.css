@@ -1,0 +1,48 @@
+#carouselExampleControls {
+    background-color: #3e3e3e;
+}
+
+.carousel-inner .carousel-item active .carousel-caption {
+    font-size: 36px;
+}
+
+.carousel-item .carousel-caption {
+    font-size: 24px;
+}
+
+.carousel-item, .carousel.slide {
+    height: 325px;
+    width: 600px;
+}
+
+.carousel {
+    float: right;
+    margin: 150px 150px 0 0;
+}
+
+.caption {
+    font-family: 'DM Sans', sans-serif; 
+    font-size: 36px;
+}
+
+.right {
+    position: absolute;
+    right: 10%;
+    top: 30%;
+    width: 35%;
+    height: 15%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.carousel-control-prev-icon {
+    margin-left: 10px;
+}
+
+.carousel-control-next-icon {
+    margin-right: 10px;
+}
