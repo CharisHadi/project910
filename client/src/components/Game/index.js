@@ -6,6 +6,7 @@ import Droppable from "./Droppable"
 function Game() {
     return (
         <div className="gameboard">
+            <h3 className="gamehead">Test Your Knowledge!</h3>
             <div className="droppables">
                 <Droppable/>
             </div>
