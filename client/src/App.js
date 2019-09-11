@@ -6,9 +6,9 @@ import {
 import Nav from "./components/Nav/Nav";
 import Logo from "./components/Logo/Logo";
 import Slide from "./components/Slide/Slide";
-import Learn from "./components/Learn/Learn";
+import LearnContainer from "./components/LearnContainer/LearnContainer";
 import Game from "./components/Game/Game";
-import Events from "./components/Events/Events";
+import EventContainer from "./components/EventContainer/EventContainer";
 // import Map from "./components/Map";
 // import { Input, TextArea, FormBtn } from "./components/Form";
 
@@ -20,9 +20,9 @@ function App() {
       <Nav />
       <Logo />
       <Slide />
-      <Learn />
+      <LearnContainer />
       <Game />
-      <Events />
+      <EventContainer />
     </div>
   );
 }

@@ -1,0 +1,78 @@
+h1 {
+    font-family: 'DM Sans', sans-serif;
+    display: inline;
+}
+
+h6 {
+    font-family: 'Tajawal', sans-serif;
+    margin-top: 8px;
+}
+
+button, input {
+    font-family: 'Tajawal', sans-serif;
+    float: right;
+}
+
+.grid-container .grid-item {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold; 
+    text-align: center;
+}
+
+.grid-pic {
+    display: block;
+}
+
+.grid-item.grid-items-right {
+    font-family: 'Tajawal', sans-serif;
+}
+
+.grid-item {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.learn-more {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 105%;
+    right: 10%;
+    /* border: 5px dashed red; */
+    margin-bottom: 5%;
+}
+
+.grid-container {
+    height: 80%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 15% 15% 15% 15% 15% 15%;
+    /* border: 1px green solid; */
+    grid-row-gap: 2.5%;
+    grid-column-gap: 1.5%;
+    margin-top: 1.5%;
+}
+  
+.grid-pic {
+    height: 50px;
+    width: 50px;
+}
+
+img .grid-pic{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-items-right{
+    background-color: #D1FFDD;
+}
+
+.grid-items-left {
+    background-color: red;
+}
+
+form {
+    display: block;
+    text-align: center;
+}
