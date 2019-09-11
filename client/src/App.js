@@ -12,6 +12,7 @@ import EventContainer from "./components/EventContainer/EventContainer";
 // import Map from "./components/Map";
 // import { Input, TextArea, FormBtn } from "./components/Form";
 
+
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 function App() {
