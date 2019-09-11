@@ -14,6 +14,7 @@ import { DragDropContext } from 'react-dnd';
 // import Map from "./components/Map";
 // import { Input, TextArea, FormBtn } from "./components/Form";
 
+
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 function App() {
