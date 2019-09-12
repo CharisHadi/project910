@@ -45,39 +45,46 @@ class Form extends Component {
 
     render() {
         return (
-            <form className="myForm" onSubmit={this.handleSubmit}>
-                <div>
-                    <label>Name of Event:</label>
+            <form>
+                <div class="form-group">
+                    <label>Event Name:</label>
                     <input 
                     type="text" 
+                    className="form-control" 
+                    placeholder="Event Name" 
                     value={this.state.nameOfEvent} 
-                    onChange={this.handleEventNameChange} 
-                    />
+                    onChange={this.handleEventNameChange} />
                 </div>
-                <div>
-                    <label>Date and Time:</label>
-                    <input 
-                    type="datetime-local" 
-                    value={this.state.datetime} 
-                    onClick={this.handleDateTimeChange}
-                    />
-                </div>
-                <div>
-                    <label>Location:</label>
+                <div class="form-group">
+                <label>Location:</label>
                     <input 
                     type="text" 
+                    className="form-control"
                     value={this.state.location} 
                     onClick={this.handleLocationChange}
                     />
                 </div>
-                <div id="comment-box">
-                    <label>Event Details:</label>
-                    <textarea
-                    value={this.state.details} 
-                    onChange={this.handleDetailsChange} 
+                <div class="form-group">
+                    <label>Date and Time:</label>
+                    <input 
+                    type="datetime-local" 
+                    className="form-control"
+                    value={this.state.datetime} 
+                    onClick={this.handleDateTimeChange}
                     />
                 </div>
-                <button type="submit">Submit</button>
+                <div class="form-group">
+                    <label>Event Details:</label>
+                    <textarea
+                    className="form-control"
+                    value={this.state.details} 
+                    onChange={this.handleDetailsChange} 
+                    rows="10"
+                    />
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         )
     }
