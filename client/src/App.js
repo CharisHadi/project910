@@ -6,16 +6,10 @@ import {
 import Nav from "./components/Nav/Nav";
 import Logo from "./components/Logo/Logo";
 import Slide from "./components/Slide/Slide";
-<<<<<<< HEAD
-import LearnContainer from "./components/LearnContainer/LearnContainer";
-import Game from "./components/Game/Game";
-import EventContainer from "./components/EventContainer/EventContainer";
-=======
-import Learn from "./components/Learn/Learn";
+import Learn from "./components/LearnContainer/LearnContainer";
 import Game from "./components/Game/";
-import Events from "./components/Events/Events";
+import Events from "./components/EventContainer/EventContainer";
 
->>>>>>> master
 // import Map from "./components/Map";
 // import { Input, TextArea, FormBtn } from "./components/Form";
 
@@ -28,9 +22,9 @@ function App() {
       <Nav />
       <Logo />
       <Slide />
-      <LearnContainer />
+      <Learn />
       <Game />
-      <EventContainer />
+      <Events />
     </div>
   );
 }
@@ -38,7 +32,7 @@ function App() {
 // <MapWrapped
 // googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
 // loadingElement={<div style={{ height: `400px`, width: `100%` }} />}
-// containerElement={<div style={{ height: `400px`, width: `100%` }} />}
+// Element={<div style={{ height: `400px`, width: `100%` }} />}
 // mapElement={<div style={{ height: `400px`, width: `100%` }} />}
 // <Input />
 // <TextArea />
