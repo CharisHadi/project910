@@ -1,4 +1,4 @@
-.knowledge-test {
+.gameboard {
     position: absolute;
     top: 205%;
     left: 10%;
@@ -8,68 +8,35 @@
     margin-bottom: 5%;
 }
 
-#header {
-    text-align: center;
-    font-size: 48px;
-    color: #505050;
-    font-family: 'DM Sans', sans-serif; 
-    font-weight: bold;
+.gamehead{
+    width:100%;
+    height:20%;
+    text-align:center;
+    padding: 62px;
 }
 
-#question {
-    padding: 20px 20px 50px 20px;
-    font-size: 28px;
-    color: #505050;
-    font-family: 'Tajawal', sans-serif;
-    text-align: center;
+.draggables{
+    width:100%;
+    height:40%
 }
 
-.answer {
-    padding: 10px 0px 10px 0px;
-    font-size: 18px;
-    color: #505050;
-    font-family: 'Tajawal', sans-serif;
-    text-align: center;
-    width: 100px;
-    display: block;
-    margin: 10px auto;
-    display: none;
+.droppables{
+    width:100%;
+    height:40%
 }
 
-button {
-    font-size: 18px;
-    color: #505050;
-    font-family: 'Tajawal', sans-serif;
-    text-align: center;
-    padding: 20px 0 20px 0;
-    width: 130px;
-    margin: 0 10px 0 10px;
+.dropper {
+    width: 150px;
+    Height: 150px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: green;
 }
 
-.center {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#countDown {
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-    font-size: 28px;
-    height: 100px;
-    width: 100px;
-    text-align: center;
-}
-
-.results {
-    visibility: hidden;
-    font-size: 18px;
-    color: #505050;
-    font-family: 'DM Sans', sans-serif; 
-    padding: 20px 0 20px 0;
-    width: 130px;
-    margin: auto;
-    text-align: center;
+.dragger{
+    width: 150px;
+    height: 150px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: aqua;
 }
