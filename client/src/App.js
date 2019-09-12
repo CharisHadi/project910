@@ -7,8 +7,9 @@ import Nav from "./components/Nav/Nav";
 import Logo from "./components/Logo/Logo";
 import Slide from "./components/Slide/Slide";
 import Learn from "./components/Learn/Learn";
-import Game from "./components/Game/Game";
+import Game from "./components/Game/";
 import Events from "./components/Events/Events";
+
 // import Map from "./components/Map";
 // import { Input, TextArea, FormBtn } from "./components/Form";
 
