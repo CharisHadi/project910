@@ -12,18 +12,18 @@ import Events from "./components/Events/Events";
 // import Map from "./components/Map";
 // import { Input, TextArea, FormBtn } from "./components/Form";
 
-
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 function App() {
+
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
-      <Nav />
-      <Logo />
-      <Slide />
-      <Learn />
-      <Game />
-      <Events />
+      <Nav></Nav>
+      <Logo></Logo>
+      <Slide></Slide>
+      <Learn></Learn>
+      <Game></Game>
+      <Events></Events>
     </div>
   );
 }

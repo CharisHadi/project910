@@ -24,6 +24,9 @@
     "if-env": "^1.0.4",
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
-    "react-facebook-login": "^4.1.1"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.0.5"
   }
 }
