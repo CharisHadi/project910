@@ -1,7 +1,45 @@
 form {
-    width: 800px;
+    float: none;
+    padding-left: 20px;
+}
+
+input {
+    float: left;
+    margin-bottom: 10px;
+}
+
+label {
+    float: left;
+    margin: 0 auto;
+    clear: both;
+}
+
+.input {
+    float: right;
+    width: 60%;
+}
+
+.textarea {
+    width: 95%;
+}
+
+.form-group {
+    margin: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button {
+    float: right;
+    clear: both;
+    margin-right: 150px;
+    margin-top: 5px;
 }
 
 textarea {
-    float: right;
+    float: left;
+    clear: both;
 }

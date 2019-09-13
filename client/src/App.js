@@ -6,19 +6,10 @@ import {
 import Nav from "./components/Nav/Nav";
 import Logo from "./components/Logo/Logo";
 import Slide from "./components/Slide/Slide";
-<<<<<<< HEAD
 import LearnContainer from "./components/LearnContainer/LearnContainer";
-import Game from "./components/Game/Game";
-import EventContainer from "./components/EventContainer/EventContainer";
-=======
-import Learn from "./components/Learn/Learn";
-import Game from "./components/Game/";
-import Events from "./components/Events/Events";
-
->>>>>>> master
-// import Map from "./components/Map";
-// import { Input, TextArea, FormBtn } from "./components/Form";
-
+import Game from "./components/Game";
+// import Map from "./components/Map/Map";
+import Modal from "./components/Modal/Modal";
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
@@ -30,7 +21,7 @@ function App() {
       <Slide />
       <LearnContainer />
       <Game />
-      <EventContainer />
+      <Modal />
     </div>
   );
 }
@@ -40,9 +31,6 @@ function App() {
 // loadingElement={<div style={{ height: `400px`, width: `100%` }} />}
 // containerElement={<div style={{ height: `400px`, width: `100%` }} />}
 // mapElement={<div style={{ height: `400px`, width: `100%` }} />}
-// <Input />
-// <TextArea />
-// <FormBtn>Submit Event</FormBtn>
 // />
 
 export default App;

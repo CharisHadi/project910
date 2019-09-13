@@ -4,8 +4,9 @@ import {
   Marker,
   InfoWindow
 } from "react-google-maps";
-import * as parkData from "../data/skateboard-parks.json";
-import mapStyles from "../mapStyles";
+import * as parkData from "../../data/skateboard-parks.json";
+import mapStyles from "./mapStyles";
+import "./styles.css";
 
 function Map() {
   const [selectedPark, setSelectedPark] = useState(null);

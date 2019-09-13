@@ -18,7 +18,7 @@ function Nav() {
                             className="sr-only">(current)</span></a>
                     <a id="learn" className="nav-item nav-link" href="#">learn more</a>
                     <a id="test" className="nav-item nav-link" href="#">knowledge check</a>
-                    <a id="help" className="nav-item nav-link" href="#">help now</a>
+                    <a id="events" className="nav-item nav-link" href="#">events</a>
                     <div className="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
                 </div>
             </div>
