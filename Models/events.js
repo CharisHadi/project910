@@ -1,5 +1,3 @@
-
-
 module.exports = function (sequelize, DataTypes) {
   var Event = sequelize.define("Event", {
     event:
@@ -7,10 +5,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    date: {
-      type: DataTypes.DATETIME,
-      allowNull: false
-    },
+  
     location: {
       type: DataTypes.STRING,
       allowNull: false,

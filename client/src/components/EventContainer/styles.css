@@ -10,15 +10,6 @@
   }
   
   .help-now-left{
-    float: left;
-    height: 100%;
-    width: 45%;
-    overflow: hidden;
-    border: 2px solid #004400;
-    border-radius: 15px;
-  }
-  
-  .help-now-right{
     float: right;
     height: 100%;
     width: 45%;

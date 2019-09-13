@@ -1,7 +1,7 @@
 
 
 module.exports = function (sequelize, DataTypes) {
-    var Event = sequelize.define("Event", {
+    var Recyclecenter = sequelize.define("Recyclecenter", {
       name:
       {
         type: DataTypes.STRING,
@@ -28,5 +28,5 @@ module.exports = function (sequelize, DataTypes) {
           allowNull: true,
       }
     });
-    return Event;
+    return Recyclecenter;
   };
