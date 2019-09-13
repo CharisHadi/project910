@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import FBLogin from "./../loginFB"
 
 function Nav() {
     return (
@@ -20,6 +21,7 @@ function Nav() {
                     <a id="test" className="nav-item nav-link" href="#">knowledge check</a>
                     <a id="events" className="nav-item nav-link" href="#">events</a>
                     <div className="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                    <FBLogin></FBLogin>
                 </div>
             </div>
         

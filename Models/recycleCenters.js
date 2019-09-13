@@ -1,7 +1,7 @@
 
 
 module.exports = function (sequelize, DataTypes) {
-    var Event = sequelize.define("Event", {
+    var Recyclecenter = sequelize.define("Recyclecenter", {
       name:
       {
         type: DataTypes.STRING,
