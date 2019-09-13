@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
-    "database": "planitDB",
+    "password": "BigMoodHugeDude2142",
+    "database": "project910db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

@@ -18,7 +18,7 @@ if (config.use_env_variable) {
     config
   );
 }
-
+console.log(sequelize);
 fs.readdirSync(__dirname)
   .filter(function(file) {
     return (
@@ -36,6 +36,7 @@ Object.keys(db).forEach(function(modelName) {
   }
 });
 
+db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
