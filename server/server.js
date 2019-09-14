@@ -13,6 +13,10 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+app.post('/api/login', (req, res) => {
+  console.log(req.body);
+  res.send("whazzzuppp");
+})
 
 // Send every other request to the React app
 // Define any API routes before this runs
@@ -23,6 +27,8 @@ app.get("*", (req, res) => {
 
 //endpoints
 //app.post('api/login')
+
+
 //check if user exists if not put in database
 //send confirm
 db.sequelize.sync({force : false}).then(()=>{
