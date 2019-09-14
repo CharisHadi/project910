@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "BigMoodHugeDude2142",
-    "database": "project910db",
+    "password": "password",
+    "database": "SavePlanetDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

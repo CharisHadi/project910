@@ -7,12 +7,12 @@ class LoginComponent extends React.Component {
         const responseFacebook = (response) => {
     console.log(response);
   }
-        return (                    
-          <FacebookLogin
-          appId="449917482282145" //APP ID NOT CREATED YET
-          fields="name,email,picture"
-          callback={responseFacebook}
-          />
+    return (                    
+      <FacebookLogin
+        appId="449917482282145" 
+        fields="name,email,picture"
+        callback={responseFacebook}
+      />
         );
     }
 }
