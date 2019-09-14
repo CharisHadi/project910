@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import FBLogin from "./../loginFB"
+import LoginSignup from "../LoginBtn/LoginSignup";
 
 function Nav() {
     return (
@@ -15,13 +15,11 @@ function Nav() {
 
             <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div className="navbar-nav">
-                    <a id="home" className="nav-item nav-link active" href="#">home <span
-                            className="sr-only">(current)</span></a>
-                    <a id="learn" className="nav-item nav-link" href="#">learn more</a>
-                    <a id="test" className="nav-item nav-link" href="#">knowledge check</a>
-                    <a id="events" className="nav-item nav-link" href="#">events</a>
-                    <div className="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
-                    <FBLogin></FBLogin>
+                    <a id="home" className="nav-item nav-link active" href="#top">home</a>
+                    <a id="learn" className="nav-item nav-link" href="#learn-container">learn more</a>
+                    <a id="test" className="nav-item nav-link" href="#game-container">knowledge check</a>
+                    <a id="events" className="nav-item nav-link" href="#map-container">events</a>
+                    <LoginSignup />
                 </div>
             </div>
         

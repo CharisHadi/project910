@@ -15,7 +15,7 @@ function LearnContainer() {
     )
 
     return (
-        <div className="learn-more">
+        <div id="learn-container" className="learn-more">
             <h1>Learn More</h1>
             <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             <input className="form-control" type="search" placeholder="Search" aria-label="Search" />

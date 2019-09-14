@@ -9,7 +9,7 @@ import Slide from "./components/Slide/Slide";
 import LearnContainer from "./components/LearnContainer/LearnContainer";
 import Game from "./components/Game";
 // import Map from "./components/Map/Map";
-import Modal from "./components/Modal/Modal";
+import CreateEventBtn from "./components/EventBtn/CreateEventBtn";
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
@@ -22,12 +22,12 @@ function App() {
       <Slide />
       <LearnContainer />
       <Game />
-      <Modal />
+      <CreateEventBtn />
     </div>
   );
 }
 
-// <MapWrapped
+//       <MapWrapped
 // googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
 // loadingElement={<div style={{ height: `400px`, width: `100%` }} />}
 // Element={<div style={{ height: `400px`, width: `100%` }} />}

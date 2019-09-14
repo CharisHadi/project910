@@ -32,14 +32,11 @@ label {
     margin-bottom: 5px;
 }
 
-button {
-    float: right;
-    clear: both;
-    margin-right: 150px;
-    margin-top: 5px;
-}
-
 textarea {
     float: left;
     clear: both;
+}
+
+.modal-backdrop {
+    z-index: 0;
 }

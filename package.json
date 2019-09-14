@@ -28,10 +28,9 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-facebook-login": "^4.1.1",
-    "react-google-login": "^5.0.5"
+    "react-google-login": "^5.0.5",
     "react-dnd": "^9.3.4",
     "react-dnd-html5-backend": "^9.3.4",
-    "react-facebook-login": "^4.1.1",
     "sequelize": "^5.18.4"
   }
 }
