@@ -1,29 +1,28 @@
 import React from "react";
-import LoginForm from "../LoginForm/LoginForm";
 import "./styles.css";
 
-function LoginSignup() {
+function MyEventsBtn() {
     return (
         <div className="nav-button">
-        <button type="button" id="login" className="btn" data-toggle="modal" data-target="#exampleModal">
-        login/signup
+        <button type="button" className="btn btn-primary fixed-btn1" data-toggle="modal" data-target="#exampleModal2">
+        my events
         </button>
 
-        <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal fade" id="exampleModal2" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">
             <div className="modal-content">
             <div className="modal-header">
-                <h5 className="modal-title active-modal" id="exampleModalLabel">Sign in</h5>
+                <h5 className="modal-title active-modal" id="exampleModalLabel">My Events</h5>
                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div className="modal-body">
-                <LoginForm />
+                <p>CONTENT HERE</p>
             </div>
             <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Sign in</button>
+                <button type="button" className="btn btn-primary">Submit</button>
             </div>
             </div>
         </div>
@@ -32,4 +31,4 @@ function LoginSignup() {
     )
 }
 
-export default LoginSignup;
+export default MyEventsBtn;

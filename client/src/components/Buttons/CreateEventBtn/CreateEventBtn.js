@@ -1,5 +1,5 @@
 import React from "react";
-import EventForm from "../EventForm/EventForm";
+import EventForm from "../../Forms/EventForm/EventForm";
 import "./styles.css";
 
 class CreateEventBtn extends React.Component {
@@ -43,7 +43,7 @@ class CreateEventBtn extends React.Component {
     render(props) {
     return (
         <div className="nav-button">
-            <button type="button" className="btn btn-primary fixed" data-toggle="modal" data-target="#exampleModal1">
+            <button type="button" className="btn btn-primary fixed-btn2" data-toggle="modal" data-target="#exampleModal1">
             create event
             </button>
 

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FBLogin from "./../loginFB";
+import FBLogin from "./../../loginFB";
 import "./styles.css";
 
 class LoginForm extends Component {
