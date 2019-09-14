@@ -9,19 +9,27 @@ module.exports = function (sequelize, DataTypes) {
     },
     highscore: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     location: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    lattitude: {
+    latitude: {
         type: DataTypes.INTEGER,
         allowNull: true,
     },
     longitude: {
         type: DataTypes.INTEGER,
         allowNull: true,
+    },
+    email: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    fbid: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
   });
   return User;
