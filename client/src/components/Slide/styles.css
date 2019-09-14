@@ -17,7 +17,6 @@
 
 .carousel {
     float: right;
-    margin: 150px 150px 0 0;
 }
 
 .caption {
@@ -45,4 +44,14 @@
 
 .carousel-control-next-icon {
     margin-right: 10px;
+}
+
+.carousel.slide {
+    position: absolute;
+    top: 200px;
+    right: 100px;
+}
+
+.carousel-caption, .carousel-indicators, .carousel-control-next, .carousel-control-prev {
+    z-index: 0;
 }

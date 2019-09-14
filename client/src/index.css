@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -13,4 +17,8 @@ body {
 .btn {
   display: inline;
   vertical-align: middle;
+}
+
+#home, #learn-container, #game-container, #map-container {
+  scroll-behavior: smooth;
 }
