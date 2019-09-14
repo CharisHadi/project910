@@ -46,7 +46,7 @@ class EventForm extends Component {
     render() {
         return (
             <form>
-                <div class="form-group">
+                <div className="form-group">
                 <label>Event Name:</label>
                     <input 
                     type="text" 
@@ -55,26 +55,26 @@ class EventForm extends Component {
                     value={this.state.nameOfEvent} 
                     onChange={this.handleEventNameChange} />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                 <label>Location:</label>
                     <input 
                     type="text" 
                     className="form-control input"
                     placeholder="Zip Code"
                     value={this.state.location} 
-                    onClick={this.handleLocationChange}
+                    onChange={this.handleLocationChange}
                     />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label>Date and Time:</label>
                     <input 
                     type="datetime-local" 
                     className="form-control input"
                     value={this.state.datetime} 
-                    onClick={this.handleDateTimeChange}
+                    onChange={this.handleDateTimeChange}
                     />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label>Event Details:</label>
                     <textarea
                     className="form-control textarea"
