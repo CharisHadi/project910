@@ -1,7 +1,6 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
-<<<<<<< HEAD
   "icons": [
     {
       "src": "./images/recycle.png",
@@ -9,8 +8,6 @@
       "type": "image/png"
     }
   ],
-=======
->>>>>>> 8244f0d4d42a5f6fe758d3dc58abdca2e4781bc1
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
