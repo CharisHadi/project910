@@ -40,3 +40,7 @@ textarea {
 .modal-backdrop {
     z-index: 0;
 }
+
+.btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:active {
+    background-color: #378C2E;
+}

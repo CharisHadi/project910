@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FBLogin from "./../loginFB";
+import FBLogin from "./../../loginFB";
 import "./styles.css";
 
 class LoginForm extends Component {
@@ -33,8 +33,8 @@ class LoginForm extends Component {
     render() {
         return (
             <form>
-                <div class="form-group">
-                <label for="uname">Username:</label>
+                <div className="form-group">
+                <label htmlFor="uname">Username:</label>
                     <input 
                     type="text" 
                     className="form-control input" 
@@ -44,14 +44,14 @@ class LoginForm extends Component {
                     onChange={this.handleUsernameChange}
                     required />
                 </div>
-                <div class="form-group">
-                <label for="psw">Password:</label>
+                <div className="form-group">
+                <label htmlFor="psw">Password:</label>
                     <input 
                     type="password" 
                     className="form-control input"
                     placeholder="Enter Password"
                     value={this.state.password} 
-                    onClick={this.handlePasswordChange}
+                    onChange={this.handlePasswordChange}
                     required
                     />
                 </div>
