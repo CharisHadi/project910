@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "BigMoodHugeDude2142",
+    "password": "password",
     "database": "project910db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -9,13 +9,13 @@
   "test": {
     "username": "root",
     "password": "YtvVP4QY6MkFwx4",
-    "database": "planitDB",
+    "database": "project910db",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "logging": false
   },
   "production": {
-    "use_env_variable": "mysql://iihvausktlj3fh8o:zbvyk2jtgrwwdmt5@ysp9sse09kl0tzxj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/t3m7us0tw5hfkbrb",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
 }

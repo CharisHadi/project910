@@ -2,7 +2,45 @@ import React from "react";
 import EventForm from "../../Forms/EventForm/EventForm";
 import "./styles.css";
 
-function CreateEventBtn() {
+class CreateEventBtn extends React.Component {
+
+    state = {
+        nameOfEvent: "",
+        details: "",
+        datetime: "",
+        location: ""
+    }
+
+    handleEventNameChange = event => {
+        this.setState({
+            nameOfEvent: event.target.value
+        })
+    }
+
+    handleDetailsChange = event => {
+        this.setState({
+            details: event.target.value
+        })
+    }
+
+    handleDateTimeChange = event => {
+        this.setState({
+            datetime: event.target.value
+        })
+    }
+
+    handleLocationChange = event => {
+        this.setState({
+            location: event.target.value
+        })
+    }
+
+    handleSubmit = event => {
+        alert(`alert: \nEVENTNAME: ${this.state.nameOfEvent} \nDetails: ${this.state.details} \nDateTime: ${this.state.datetime} \nlocation: ${this.state.location}`)
+        event.preventDefault()
+    }
+
+    render(props) {
     return (
         <div className="nav-button">
             <button type="button" className="btn btn-primary fixed-btn2" data-toggle="modal" data-target="#exampleModal1">
@@ -19,17 +57,23 @@ function CreateEventBtn() {
                     </button>
                 </div>
                 <div className="modal-body">
-                    <EventForm />
+                    <EventForm 
+                        handleDateTimeChange = {this.handleDateTimeChange}
+                        handleDetailsChange = {this.handleDetailsChange}
+                        handleEventNameChange = {this.handleEventNameChange}
+                        handleLocationChange = {this.handleLocationChange}
+                    />
                 </div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" className="btn btn-primary">Add Event</button>
+                    <button type="button" onClick = {this.handleSubmit} className="btn btn-primary">Add Event</button>
                 </div>
                 </div>
             </div>
             </div>
         </div>
     )
+    }
 }
 
 export default CreateEventBtn;
