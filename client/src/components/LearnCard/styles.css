@@ -64,3 +64,7 @@ button, input {
 .grid-items-right{
     background-color: #D1FFDD;
 }
+
+.center {
+    text-align: center;
+}

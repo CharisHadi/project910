@@ -1,7 +1,5 @@
 import React from 'react';
-import MyButton from './../Button';
 import FacebookLogin from 'react-facebook-login';
-
 
 class LoginComponent extends React.Component {
 
@@ -10,11 +8,11 @@ class LoginComponent extends React.Component {
     console.log(response);
   }
         return (                    
-               <FacebookLogin
-        appId="449917482282145" //APP ID NOT CREATED YET
-        fields="name,email,picture"
-        callback={responseFacebook}
-      />
+          <FacebookLogin
+          appId="449917482282145" //APP ID NOT CREATED YET
+          fields="name,email,picture"
+          callback={responseFacebook}
+          />
         );
     }
 }

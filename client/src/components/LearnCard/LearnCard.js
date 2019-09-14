@@ -9,7 +9,7 @@ function LearnCard(props) {
             <Row>
                 <Col>
                     <img className="grid-pic" src={props.imgUrl} alt="" />
-                    <p>{props.materialName}</p>
+                    <p className="center">{props.materialName}</p>
                 </Col>
                 <Col>
                     <p>{props.info}</p>

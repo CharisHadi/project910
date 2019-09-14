@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 
-class Form extends Component {
+class EventForm extends Component {
 
     constructor(props) {
         super(props)
@@ -39,7 +39,7 @@ class Form extends Component {
     }
 
     handleSubmit = event => {
-        alert(`${this.state.nameOfEvent} ${this.state.details} ${this.state.datetime}`)
+        alert(`${this.state.nameOfEvent} ${this.state.details} ${this.state.datetime} ${this.state.location}`)
         event.preventDefault()
     }
 
@@ -47,10 +47,10 @@ class Form extends Component {
         return (
             <form>
                 <div class="form-group">
-                    <label>Event Name:</label>
+                <label>Event Name:</label>
                     <input 
                     type="text" 
-                    className="form-control" 
+                    className="form-control input" 
                     placeholder="Event Name" 
                     value={this.state.nameOfEvent} 
                     onChange={this.handleEventNameChange} />
@@ -59,7 +59,8 @@ class Form extends Component {
                 <label>Location:</label>
                     <input 
                     type="text" 
-                    className="form-control"
+                    className="form-control input"
+                    placeholder="Zip Code"
                     value={this.state.location} 
                     onClick={this.handleLocationChange}
                     />
@@ -68,7 +69,7 @@ class Form extends Component {
                     <label>Date and Time:</label>
                     <input 
                     type="datetime-local" 
-                    className="form-control"
+                    className="form-control input"
                     value={this.state.datetime} 
                     onClick={this.handleDateTimeChange}
                     />
@@ -76,18 +77,15 @@ class Form extends Component {
                 <div class="form-group">
                     <label>Event Details:</label>
                     <textarea
-                    className="form-control"
+                    className="form-control textarea"
                     value={this.state.details} 
                     onChange={this.handleDetailsChange} 
                     rows="10"
                     />
-                </div>
-                <div>
-                    <button type="submit">Submit</button>
                 </div>
             </form>
         )
     }
 }
 
-export default Form;
+export default EventForm;
