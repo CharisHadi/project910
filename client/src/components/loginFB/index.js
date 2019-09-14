@@ -7,7 +7,8 @@ class LoginComponent extends React.Component {
     // send post request to server with fb user name and id
       axios.post('/api/login', {
         name: response.name,
-        fbid: response.id
+        email: response.email,
+        fbid: response.id,
       })
       .then(function (res) {
         console.log(res)

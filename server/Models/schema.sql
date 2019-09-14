@@ -1,38 +1,45 @@
-CREATE DATABASE SavePlanetDB;
+CREATE DATABASE project910db;
 
-USE SavePlanetDB;
+USE project910db;
 
 CREATE TABLE `users` (
 
-  id INT NOT NULL AUTO_INCREMENT,
-  name varchar(30),
-  highscore int(10),
-  location varchar(300),
-  lattitude int(10),
-  longitude int(10),
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  name VARCHAR(30),
+  highscore INTEGER(10),
+  location VARCHAR(300),
+  latitude INTEGER(10),
+  longitude INTEGER(10),
+  email VARCHAR(50),
+  fbid VARCHAR(30),
+  createdAt DATETIME,
+  updatedAt DATETIME,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE `events` (
 
-  id INT NOT NULL AUTO_INCREMENT,
-  event varchar(30),
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  event VARCHAR(30),
   date datetime,
-  location varchar(300),
-  lattitude int(10),
-  longitude int(10),
-  description varchar(500),
-  
+  location VARCHAR(300),
+  latitude INTEGER(10),
+  longitude INTEGER(10),
+  description VARCHAR(500),
+  createdAt DATETIME,
+  updatedAt DATETIME,  
   PRIMARY KEY (id)
 );
 
 CREATE TABLE `RecycleCenters` (
 
-  id INT NOT NULL AUTO_INCREMENT,
-  name varchar(30),
-  material varchar(100),
-  location varchar(300),
-  lattitude int(10),
-  longitude int(10),
+  id INTEGER NOT NULL AUTO_INCREMENT,
+  name VARCHAR(30),
+  material VARCHAR(100),
+  location VARCHAR(300),
+  latitude INTEGER(10),
+  longitude INTEGER(10),
+  createdAt DATETIME,
+  updatedAt DATETIME,
   PRIMARY KEY (id)
 );

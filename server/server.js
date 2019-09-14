@@ -15,13 +15,21 @@ if (process.env.NODE_ENV === "production") {
 // Define API routes here
 app.post('/api/login', (req, res) => {
   console.log(req.body);
-  res.send("whazzzuppp");
-})
+  db.User.findOrCreate({where: {name: req.body.name, email: req.body.name, fbid: req.body.fbid}})
+  .then(([user, created]) => {
+    console.log(user.get({
+      plain: true
+  }))
+  console.log(created);
+  res.send("created");
+  });
+});
 
 // Send every other request to the React app
 // Define any API routes before this runs
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+
 });
 
 
