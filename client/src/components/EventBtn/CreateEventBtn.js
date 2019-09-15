@@ -40,7 +40,8 @@ class CreateEventBtn extends React.Component {
         event.preventDefault()
     }
 
-    render(props) {
+    render() {
+
     return (
         <div className="nav-button">
             <button type="button" className="btn btn-primary fixed" data-toggle="modal" data-target="#exampleModal1">

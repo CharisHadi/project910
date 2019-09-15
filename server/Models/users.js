@@ -7,6 +7,11 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
+    nickname:
+    {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
     highscore: {
       type: DataTypes.INTEGER,
       allowNull: true

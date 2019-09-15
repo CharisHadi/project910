@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   withGoogleMap,
   withScriptjs
@@ -13,18 +13,38 @@ import CreateEventBtn from "./components/EventBtn/CreateEventBtn";
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
-function App() {
+class App extends Component {
 
-  return (
-    <div style={{ width: "100vw", height: "100vh" }}>
-      <Nav />
-      <Logo />
-      <Slide />
-      <LearnContainer />
-      <Game />
-      <CreateEventBtn />
-    </div>
-  );
+  state = {
+    loggedIn: false,
+    userID: "",
+    name: ""
+  }
+
+  setLogIn = userInfo => {
+    this.setState({
+      loggedIn: userInfo.loggedIn,
+      userID: userInfo.userID,
+      name: userInfo.name
+    })
+  }
+
+  render() {
+
+    return (
+      <div style={{ width: "100vw", height: "100vh" }}>
+        <Nav 
+          loggedIn = {this.state.loggedIn} 
+          setLogin = {this.setLogIn}
+        />
+        <Logo />
+        <Slide />
+        <LearnContainer />
+        <Game />
+        <CreateEventBtn />
+      </div>
+    );
+  }
 }
 
 //       <MapWrapped
