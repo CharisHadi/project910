@@ -1,5 +1,7 @@
 import React from "react";
 import EventForm from "../../Forms/EventForm/EventForm";
+import axios from "axios";
+import moment from "moment";
 import "./styles.css";
 
 class CreateEventBtn extends React.Component {
@@ -35,12 +37,26 @@ class CreateEventBtn extends React.Component {
         })
     }
 
-    handleSubmit = event => {
-        alert(`alert: \nEVENTNAME: ${this.state.nameOfEvent} \nDetails: ${this.state.details} \nDateTime: ${this.state.datetime} \nlocation: ${this.state.location}`)
-        event.preventDefault()
-    }
+        handleSubmit = event => {
+        var formattedDate = moment(this.state.datetime).format('YYYY-MM-DD hh:mm:ss');
 
-    render(props) {
+        axios.post('/api/addEvent', {
+            event: this.state.nameOfEvent,
+            time: formattedDate,
+            location: this.state.location,
+            description: this.state.details
+        })
+        .then(function (res) {
+            console.log(res)
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+        }
+
+    render() {
+
     return (
         <div className="nav-button">
             <button type="button" className="btn btn-primary fixed-btn2" data-toggle="modal" data-target="#exampleModal1">

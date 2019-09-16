@@ -19,3 +19,7 @@ button {
     margin-right: 150px;
     margin-top: 5px;
 }
+
+table, th, td {
+    border: 1px solid black;
+  }

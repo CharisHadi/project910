@@ -1,23 +1,13 @@
 import React, { Component } from "react";
 import "./styles.css";
-import LoginSignup from "../Buttons/LoginBtn/LoginSignup";
+import LoginControl from "../loginControl/loginControl";
 
-class Nav extends React.Component {
-    constructor(props) {
-        super(props);
-        this.addActiveClass = this.addActiveClass.bind(this);
-        this.state = {
-            active: false,
-        };
-    }
-    addActiveClass() {
-        const currentState = this.state.active;
-        this.setState({ active: !currentState });
-    };
+class Nav extends Component {
 
     render() {
-        return (
-            <nav className="navbar navbar-expand-lg navbar-light">
+
+    return (
+        <nav className="navbar navbar-expand-lg navbar-light">
 
                 <a className="navbar-brand" href="#top"> <b>910 a global emergency</b> </a>
 
@@ -26,18 +16,21 @@ class Nav extends React.Component {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        <a id="home" className={this.state.active ? 'active': null} onClick={this.addActiveClass} href="#top">home</a>
-                        <a id="learn" className={this.state.active ? 'active': null} onClick={this.addActiveClass} href="#learn-container">learn more</a>
-                        <a id="events" className={this.state.active ? 'active': null} onClick={this.addActiveClass} href="#map">find events/centers</a>
-                        <a id="test" className={this.state.active ? 'active': null} onClick={this.addActiveClass} href="#game-container">knowledge check</a>
-                        <LoginSignup />
-                    </div>
+            <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+                <div className="navbar-nav">
+                    <a id="home" className="nav-item nav-link active" href="#top">home</a>
+                    <a id="learn" className="nav-item nav-link" href="#learn-container">learn more</a>
+                    <a id="events" className="nav-item nav-link" href="#map">find events/centers</a>
+                    <a id="test" className="nav-item nav-link" href="#game-container">knowledge check</a>
+                    <LoginControl 
+                        loggedIn = {this.props.loggedIn} 
+                        setLogin = {this.props.setLogIn}
+                    />
                 </div>
-            
-            </nav>
-        )
+            </div>
+        
+        </nav>
+    )
     }
 }
 

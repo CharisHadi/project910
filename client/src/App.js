@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import {
   withGoogleMap,
   withScriptjs
@@ -15,14 +15,34 @@ import "./App.css";
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
-function App() {
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      loggedIn: true,
+      userID: "00000000000",
+      name: "test_user"
+    }
+    this.setLogIn = this.setLogIn.bind(this);
+  }
 
-  return (
-    <div style={{ width: "100vw", height: "100vh" }}>
-      <Nav />
-      <Logo />
-      <Slide />
-      <LearnContainer />
+  setLogIn() {
+    this.setState({
+      loggedIn: true,
+    });
+  }
+
+  render() {
+
+    return (
+      <div style={{ width: "100vw", height: "100vh" }}>
+        <Nav 
+          loggedIn = {this.state.loggedIn} 
+          setLogin = {this.setLogIn}
+        />
+        <Logo />
+        <Slide />
+        <LearnContainer />
       <MapWrapped 
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${
           process.env.REACT_APP_GOOGLE_KEY
@@ -37,5 +57,5 @@ function App() {
     </div>
   );
 }
-
+}
 export default App;

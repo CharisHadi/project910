@@ -13,9 +13,15 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+
+// API route to find or add user to DB
 app.post('/api/login', (req, res) => {
   console.log(req.body);
-  db.User.findOrCreate({where: {name: req.body.name, email: req.body.name, fbid: req.body.fbid}})
+  db.User.findOrCreate({where: {
+    name: req.body.name, 
+    email: req.body.name, 
+    fbid: req.body.fbid
+  }})
   .then(([user, created]) => {
     console.log(user.get({
       plain: true
@@ -24,6 +30,32 @@ app.post('/api/login', (req, res) => {
   res.send("created");
   });
 });
+
+//API Route to find all events having to do with user
+app.get('/api/getEvents', (req, res) => {
+  db.Event.findAll().then(eventList => {
+    res.send(eventList);
+})
+})
+
+// API route to add new event to DB
+app.post('/api/addEvent', (req, res) => {
+  console.log(req.body);
+  db.Event.findOrCreate({ where: {
+    event: req.body.event, 
+    time: req.body.time, 
+    location: req.body.location,
+    description: req.body.description
+  }})
+  .then(([event, created]) => {
+    console.log(event.get({
+      plain: true
+  }))
+  console.log(created);
+  res.send("created");
+  });
+});
+
 
 // Send every other request to the React app
 // Define any API routes before this runs
