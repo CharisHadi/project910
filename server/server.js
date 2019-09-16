@@ -17,7 +17,11 @@ if (process.env.NODE_ENV === "production") {
 // API route to find or add user to DB
 app.post('/api/login', (req, res) => {
   console.log(req.body);
-  db.User.findOrCreate({where: {name: req.body.name, email: req.body.name, fbid: req.body.fbid}})
+  db.User.findOrCreate({where: {
+    name: req.body.name, 
+    email: req.body.name, 
+    fbid: req.body.fbid
+  }})
   .then(([user, created]) => {
     console.log(user.get({
       plain: true
@@ -30,9 +34,14 @@ app.post('/api/login', (req, res) => {
 // API route to add new event to DB
 app.post('/api/addEvent', (req, res) => {
   console.log(req.body);
-  db.User.findOrCreate({where: {name: req.body.name, email: req.body.name, fbid: req.body.fbid}})
-  .then(([user, created]) => {
-    console.log(user.get({
+  db.Event.firOrCreate({
+    event: req.body.event, 
+    time: req.body.time, 
+    location: req.body.location,
+    description: req.body.description
+  })
+  .then(([event, created]) => {
+    console.log(event.get({
       plain: true
   }))
   console.log(created);
