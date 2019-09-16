@@ -2,6 +2,9 @@
     color: white;
     float: right;
     font-family: 'Tajawal', sans-serif;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
 }
 
 #navbarNavAltMarkup {

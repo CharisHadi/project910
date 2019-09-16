@@ -16,10 +16,8 @@ function LearnContainer() {
 
     return (
         <div id="learn-container" className="learn-more">
-            <h1>Learn More</h1>
-            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            <input className="form-control" type="search" placeholder="Search" aria-label="Search" />
-            <h6>search your zip code to learn more about how to recycle different materials in your area</h6>
+            <header id="purpose">Our Purpose</header>
+            <p>To show you just how easy recycling is by providing you with the resources to be able to effectively recycle your materials PROPERLY. Below is a detailed table with the steps you need to take to recycle each individual recyclable material. Please sign up with us to participate or create #trashtag events in your area. <a href="#">Click here</a> to learn more about #trashtag events.</p>
 
             <Container>
                 {learnCardComponents}
