@@ -3,7 +3,8 @@ import FacebookLogin from 'react-facebook-login';
 import axios from "axios";
 
 class LoginComponent extends React.Component {
-     responseFacebook = (response) => {
+    responseFacebook = (response) => {
+
     // send post request to server with fb user name and id
       axios.post('/api/login', {
         name: response.name,
@@ -25,6 +26,7 @@ class LoginComponent extends React.Component {
         appId="449917482282145" 
         fields="name,email,picture"
         callback={this.responseFacebook}
+        acallbacl={this.props.setLogIn}
       />
         );
     }

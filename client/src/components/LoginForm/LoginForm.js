@@ -55,7 +55,7 @@ class LoginForm extends Component {
                     required
                     />
                 </div>
-                <FBLogin />
+                <FBLogin setLogIn = {this.props.setLogIn}/>
             </form>
         )
     }

@@ -14,19 +14,20 @@ import CreateEventBtn from "./components/EventBtn/CreateEventBtn";
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 class App extends Component {
-
-  state = {
-    loggedIn: false,
-    userID: "",
-    name: ""
+  constructor() {
+    super();
+    this.state = {
+      loggedIn: true,
+      userID: "00000000000",
+      name: "test_user"
+    }
+    this.setLogIn = this.setLogIn.bind(this);
   }
 
-  setLogIn = userInfo => {
+  setLogIn() {
     this.setState({
-      loggedIn: userInfo.loggedIn,
-      userID: userInfo.userID,
-      name: userInfo.name
-    })
+      loggedIn: true,
+    });
   }
 
   render() {
@@ -47,7 +48,7 @@ class App extends Component {
   }
 }
 
-//       <MapWrapped
+// <MapWrapped
 // googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
 // loadingElement={<div style={{ height: `400px`, width: `100%` }} />}
 // Element={<div style={{ height: `400px`, width: `100%` }} />}
