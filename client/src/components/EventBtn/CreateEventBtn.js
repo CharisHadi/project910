@@ -2,7 +2,7 @@ import React from "react";
 import EventForm from "../EventForm/EventForm";
 import "./styles.css";
 
-class CreateEventBtn extends React.Component {
+class CreateEventBtn extends React.Component { 
 
     state = {
         nameOfEvent: "",
