@@ -39,11 +39,6 @@ class CreateEventBtn extends React.Component {
 
         handleSubmit = event => {
         var formattedDate = moment(this.state.datetime).format('YYYY-MM-DD hh:mm:ss');
-        //formattedDate = formattedDate.split('T').join(' ').append(':00');
-
-        alert(`alert: \nEVENTNAME: ${this.state.nameOfEvent} 
-        \nDetails: ${this.state.details} \nDateTime: ${formattedDate} 
-        \nlocation: ${this.state.location}`)
 
         axios.post('/api/addEvent', {
             event: this.state.nameOfEvent,
@@ -59,8 +54,6 @@ class CreateEventBtn extends React.Component {
         });
 
         }
-
-        //event.preventDefault()
 
     render() {
 
