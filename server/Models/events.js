@@ -8,11 +8,11 @@ module.exports = function (sequelize, DataTypes) {
   
     location: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     lattitude: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
     },
     longitude: {
         type: DataTypes.INTEGER,
