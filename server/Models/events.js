@@ -3,24 +3,28 @@ module.exports = function (sequelize, DataTypes) {
     event:
     {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-  
-    location: {
-      type: DataTypes.STRING,
       allowNull: false,
     },
+    time:
+    {
+      type: DataTypes.DATE,
+      allowNull: true
+    },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     lattitude: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: true
     },
     longitude: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
+      type: DataTypes.INTEGER,
+      allowNull: true
     },
     description: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   });
   return Event;

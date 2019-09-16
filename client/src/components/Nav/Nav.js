@@ -1,9 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import "./styles.css";
-import LoginSignup from "../Buttons/LoginBtn/LoginSignup";
+import LoginControl from "../loginControl/loginControl";
 
+class Nav extends Component {
 
-function Nav() {
+    render() {
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
 
@@ -20,12 +22,16 @@ function Nav() {
                     <a id="learn" className="nav-item nav-link" href="#learn-container">learn more</a>
                     <a id="events" className="nav-item nav-link" href="#map">find events/centers</a>
                     <a id="test" className="nav-item nav-link" href="#game-container">knowledge check</a>
-                    <LoginSignup />
+                    <LoginControl 
+                        loggedIn = {this.props.loggedIn} 
+                        setLogin = {this.props.setLogIn}
+                    />
                 </div>
             </div>
         
         </nav>
     )
+    }
 }
 
 export default Nav;

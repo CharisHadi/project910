@@ -2,7 +2,10 @@ import React from "react";
 import LoginForm from "../../Forms/LoginForm/LoginForm";
 import "./styles.css";
 
-function LoginSignup() {
+class LoginSignup extends React.Component {
+
+    render() {
+
     return (
         <div className="nav-button">
         <button type="button" id="login" className="btn" data-toggle="modal" data-target="#exampleModal">
@@ -19,7 +22,7 @@ function LoginSignup() {
                 </button>
             </div>
             <div className="modal-body">
-                <LoginForm />
+                <LoginForm setLogIn = {this.props.setLogIn}/>
             </div>
             <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -30,6 +33,7 @@ function LoginSignup() {
         </div>
     </div>
     )
+    }
 }
 
 export default LoginSignup;
