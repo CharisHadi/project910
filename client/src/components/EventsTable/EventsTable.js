@@ -9,9 +9,9 @@ class EventsTable extends React.Component {
 
         return (
         <tr>
-            <tb>{this.props.event}</tb>
-            <tb>{this.props.time}</tb> 
-            <tb>{this.props.location}</tb>
+            <td>{this.props.event}</td>
+            <td>{this.props.time}</td> 
+            <td>{this.props.location}</td>
         </tr>
         )
     }

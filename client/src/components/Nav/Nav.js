@@ -24,7 +24,7 @@ class Nav extends Component {
                     <a id="test" className="nav-item nav-link" href="#game-container">knowledge check</a>
                     <LoginControl 
                         loggedIn = {this.props.loggedIn} 
-                        setLogin = {this.props.setLogIn}
+                        setLogIn = {this.props.setLogIn}
                     />
                 </div>
             </div>

@@ -62,6 +62,8 @@ function Map() {
               <h2>{selectedPark.properties.NAME}</h2>
               <p>{selectedPark.properties.DESCRIPTIO}</p>
             </div>
+
+            
           </InfoWindow>
         )}
       </GoogleMap>
