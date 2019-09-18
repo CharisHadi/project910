@@ -4,10 +4,12 @@
 
 .carousel-inner .carousel-item active .carousel-caption {
     font-size: 36px;
+    opacity: .5;
 }
 
 .carousel-item .carousel-caption {
     font-size: 24px;
+    font-weight: bolder;
 }
 
 .carousel-item, .carousel.slide {
@@ -49,7 +51,7 @@
 .carousel.slide {
     position: absolute;
     top: 200px;
-    right: 100px;
+    right: 150px;
 }
 
 .carousel-caption, .carousel-indicators, .carousel-control-next, .carousel-control-prev {

@@ -11,6 +11,7 @@ import Game from "./components/Game";
 import Map from "./components/Map/Map";
 import MyEventsBtn from "./components/Buttons/MyEventsBtn/MyEventsBtn";
 import CreateEventBtn from "./components/Buttons/CreateEventBtn/CreateEventBtn";
+import "./App.css";
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 

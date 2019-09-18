@@ -5,12 +5,13 @@
 
 .fixed-btn2, .fixed-btn2:hover, .fixed-btn2:active, .fixed-btn2:visited {
     position: fixed;
-    bottom: 80px;
-    right: -135px;
-    background-color: #378C2E;
+    top: 105px;
+    right: -145px;
+    background-color: #534f44;
     font-size: 16px;
-    height: 50px;
+    height: 40px;
     width: 120px;
+    padding: 0;
 }
 
 button {
@@ -18,4 +19,8 @@ button {
     clear: both;
     margin-right: 150px;
     margin-top: 5px;
+}
+
+.fa-calendar-plus {
+    padding-right: 3px;
 }

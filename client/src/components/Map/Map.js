@@ -25,6 +25,7 @@ function Map() {
   }, []);
 
   return (
+      <div id="map-start">
       <GoogleMap 
         defaultZoom={10}
         defaultCenter={{ lat: 45.4211, lng: -75.6903 }}
@@ -66,6 +67,7 @@ function Map() {
           </InfoWindow>
         )}
       </GoogleMap>
+      </div>
   );
 }
 
