@@ -1,7 +1,14 @@
-#test, #learn, #home, #events, #myevents, #login {
+#test, #learn, #home, #events, #myevents, #login, #accountInfo {
     color: white;
     float: right;
     font-family: 'Tajawal', sans-serif;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+}
+
+#accountInfo {
+    padding-top: 0px;
 }
 
 #navbarNavAltMarkup {
@@ -30,4 +37,4 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1;
-  }
+}

@@ -38,7 +38,7 @@ class MyEventsBtn extends React.Component {
     return (
         <div className="nav-button">
         <button type="button" className="btn btn-primary fixed-btn1" data-toggle="modal" data-target="#exampleModal2">
-        my events
+        <i class="far fa-calendar-check"></i> my events
         </button>
 
         <div className="modal fade" id="exampleModal2" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -72,7 +72,7 @@ class MyEventsBtn extends React.Component {
             </div>
             <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Submit</button>
+                <button type="button" className="btn btn-primary" data-dismiss="modal">Submit</button>
             </div>
             </div>
         </div>

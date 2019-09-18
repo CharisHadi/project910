@@ -1,70 +1,54 @@
-h1 {
-    font-family: 'DM Sans', sans-serif;
-    display: inline;
-}
-
-h6 {
-    font-family: 'Tajawal', sans-serif;
-    margin-top: 8px;
-}
-
-button, input {
-    font-family: 'Tajawal', sans-serif;
-    float: right;
-}
-
-.grid-container .grid-item {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: bold; 
+.material-name {
     text-align: center;
 }
 
-.grid-pic {
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    height: 400px;
+    padding: 12px 16px;
+    z-index: 0;
+}
+
+.dropdown-content h3 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+#item2 h3 {
+    font-size: 15.95px;
+}
+
+.dropdown-content p {
+    font-size: 12px;
+}
+
+/* Add:hover right after .dropdown */
+.dropdown .dropdown-content {
     display: block;
 }
 
-.grid-item.grid-items-right {
-    font-family: 'Tajawal', sans-serif;
+#item1, #item2, #item3, #item4, #item5, #item6, #item7 {
+    top: 55px;
 }
 
-.grid-item {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: bold;
-    text-align: center;
+.col .dropdown .dropdown-content #item1 {
+    left: -100px;
+    width: 100%;
+    position: relative;
 }
 
-.learn-more {
-    width: 80%;
-    height: 80%;
-    position: absolute;
-    top: 105%;
-    right: 10%;
-    /* border: 5px dashed red; */
-    margin-bottom: 5%;
-}
-
-.grid-container {
-    height: 80%;
-    display: grid;
-    grid-template-columns: 25% 75%;
-    grid-template-rows: 15% 15% 15% 15% 15% 15%;
-    /* border: 1px green solid; */
-    grid-row-gap: 2.5%;
-    grid-column-gap: 1.5%;
-    margin-top: 1.5%;
-}
-  
-.grid-pic{
-    height: 75%;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.grid-items-right{
-    background-color: #D1FFDD;
-}
-
-.center {
-    text-align: center;
+.col {
+    margin: 0;
+    padding: 1px;
 }

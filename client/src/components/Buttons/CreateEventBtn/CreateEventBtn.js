@@ -60,7 +60,7 @@ class CreateEventBtn extends React.Component {
     return (
         <div className="nav-button">
             <button type="button" className="btn btn-primary fixed-btn2" data-toggle="modal" data-target="#exampleModal1">
-            create event
+            <i class="far fa-calendar-plus"></i> create event
             </button>
 
             <div className="modal fade" id="exampleModal1" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -82,7 +82,7 @@ class CreateEventBtn extends React.Component {
                 </div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" onClick = {this.handleSubmit} className="btn btn-primary">Add Event</button>
+                    <button type="button" onClick = {this.handleSubmit} className="btn btn-primary" data-dismiss="modal">Add Event</button>
                 </div>
                 </div>
             </div>
