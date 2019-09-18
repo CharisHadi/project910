@@ -2,16 +2,18 @@ import React from "react";
 import LoginSignup from "../Buttons/LoginBtn/LoginSignup";
 
 class LoginControl extends React.Component {
-
+  
 
   render() {
+        console.log("loginbutton: " , this.props);
+    
     const isLoggedIn = this.props.loggedIn;
     let button;
 
     if (isLoggedIn) {
       button = <a id="accountInfo" className="nav-item nav-link" href="#">account</a>
     } else {
-      button = <LoginSignup setLogIn = {this.props.setLogIn} />;
+      button = <LoginSignup setLogIn={this.props.setLogIn} />;
     }
 
     return (

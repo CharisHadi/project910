@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import EventsTable from "../../EventsTable/EventsTable"
+import AutoComplete from "../../AutocompleteSearch/AutocompleteSearch"
 import "./styles.css";
 
 class MyEventsBtn extends React.Component {

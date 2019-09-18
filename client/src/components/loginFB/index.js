@@ -12,21 +12,24 @@ class LoginComponent extends React.Component {
         fbid: response.id,
       })
       .then(function (res) {
-        console.log(res)
+        console.log(this.props)
+        
       })
       .catch(function (error) {
         console.log(error);
       });
-        console.log(response);
+        console.log(this.props);
+        this.props.setLogIn()
     }
     render() {
+      
+        console.log("bflofing: " , this.props);
 
     return (                    
       <FacebookLogin
         appId="449917482282145" 
         fields="name,email,picture"
         callback={this.responseFacebook}
-        acallbacl={this.props.setLogIn}
       />
         );
     }

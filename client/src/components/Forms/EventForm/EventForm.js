@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
+import AutoComplete from "../../AutocompleteSearch/AutocompleteSearch"
+ 
 
 class EventForm extends Component {
 
@@ -39,6 +41,7 @@ class EventForm extends Component {
                     rows="10"
                     />
                 </div>
+                <AutoComplete />
             </form>
         )
     }

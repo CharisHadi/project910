@@ -15,29 +15,28 @@ import CreateEventBtn from "./components/Buttons/CreateEventBtn/CreateEventBtn";
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      loggedIn: true,
+  
+    state = {
+      loggedIn: false,
       userID: "00000000000",
       name: "test_user"
     }
-    this.setLogIn = this.setLogIn.bind(this);
-  }
+  
 
-  setLogIn() {
+  setLogIn = () => {
     this.setState({
       loggedIn: true,
     });
   }
 
   render() {
+    console.log("Addp.js: " + this.setLogIn);
 
     return (
       <div style={{ width: "100vw", height: "100vh" }}>
         <Nav 
-          loggedIn = {this.state.loggedIn} 
-          setLogin = {this.setLogIn}
+          loggedIn={this.state.loggedIn} 
+          setLogIn={this.setLogIn}
         />
         <Logo />
         <Slide />
@@ -52,7 +51,9 @@ class App extends Component {
       />
       <Game />
       <MyEventsBtn />
-      <CreateEventBtn />
+      <CreateEventBtn 
+        userID = {this.state.userID}
+      />
     </div>
   );
 }
