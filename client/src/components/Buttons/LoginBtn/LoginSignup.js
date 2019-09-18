@@ -6,7 +6,7 @@ class LoginSignup extends React.Component {
 
     render() {
         
-        console.log("loginbutton: " , this.props.setLogIn);
+        console.log("loginbutton: " , this.props);
     return (
         <div className="nav-button">
         <button type="button" id="login" className="btn" data-toggle="modal" data-target="#exampleModal">

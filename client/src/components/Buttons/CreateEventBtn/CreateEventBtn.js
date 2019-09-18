@@ -42,24 +42,31 @@ class CreateEventBtn extends React.Component {
         var formattedDate = moment(this.state.datetime).format('YYYY-MM-DD hh:mm:ss');
 
         console.log(this.props.userID);
-        geocodeByAddress("Tokyo, Japan")
-        .then(results => getLatLng(results[0]))
-        .then(({ lat, lng }) =>
-            console.log('Successfully got latitude and longitude', { lat, lng })
-        );
-
-        axios.post('/api/addEvent', {
-            event: this.state.nameOfEvent,
-            time: formattedDate,
-            location: this.state.location,
-            description: this.state.details
+        geocodeByAddress("4361 Collins Way")
+        .then(results => {
+            console.log("results:" ,results)
+            return(getLatLng(results[0]))
         })
+        .then((res) =>
+            //console.log('Successfully got latitude and longitude', res)
+            axios.post('/api/addEvent', {
+                event: this.state.nameOfEvent,
+                time: formattedDate,
+                location: this.state.location,
+                latitude: res.lat,
+                longitude: res.lng,
+                description: this.state.details
+            })
+        )
         .then(function (res) {
             console.log(res)
         })
         .catch(function (error) {
             console.log(error);
-        });
+        }
+        ).catch(err => {
+            console.log(err)
+        })
 
         }
 

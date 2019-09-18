@@ -14,7 +14,7 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    lattitude: {
+    latitude: {
       type: DataTypes.INTEGER,
       allowNull: true
     },
@@ -27,5 +27,7 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: true,
     }
   });
+
+
   return Event;
 };
