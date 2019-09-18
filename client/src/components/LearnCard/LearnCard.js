@@ -1,21 +1,20 @@
 import React from "react";
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Col from 'react-bootstrap/Col';
 import "./styles.css";
 
 function LearnCard(props) {
     return (
-        <div>
-            <Row>
-                <Col>
-                    <img className="grid-pic" src={props.imgUrl} alt="" />
-                    <p className="center">{props.materialName}</p>
-                </Col>
-                <Col>
+        <Col>
+            <div className="dropdown">
+            <span>
+                <img className="grid-pic" src={props.imgUrl} alt="" />
+            </span>
+                <div className="dropdown-content" id={props.id}>
+                    <h3>{props.materialName}</h3>
                     <p>{props.info}</p>
-                </Col>
-            </Row>
-        </div>
+                </div>
+            </div>         
+        </Col>
     )
 }
 

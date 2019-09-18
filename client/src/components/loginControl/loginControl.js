@@ -1,5 +1,6 @@
 import React from "react";
 import LoginSignup from "../Buttons/LoginBtn/LoginSignup";
+import Account from "../Buttons/AccountBtn/AccountBtn";
 
 class LoginControl extends React.Component {
 
@@ -9,7 +10,7 @@ class LoginControl extends React.Component {
     let button;
 
     if (isLoggedIn) {
-      button = <a id="accountInfo" className="nav-item nav-link" href="#">account</a>
+      button = <Account />
     } else {
       button = <LoginSignup setLogIn = {this.props.setLogIn} />;
     }

@@ -20,7 +20,7 @@ class Nav extends Component {
                 <div className="navbar-nav">
                     <a id="home" className="nav-item nav-link active" href="#top">home</a>
                     <a id="learn" className="nav-item nav-link" href="#learn-container">learn more</a>
-                    <a id="events" className="nav-item nav-link" href="#map">find events/centers</a>
+                    <a id="events" className="nav-item nav-link" href="#map-start">find events/centers</a>
                     <a id="test" className="nav-item nav-link" href="#game-container">knowledge check</a>
                     <LoginControl 
                         loggedIn = {this.props.loggedIn} 

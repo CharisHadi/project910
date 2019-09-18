@@ -4,10 +4,12 @@
 
 .carousel-inner .carousel-item active .carousel-caption {
     font-size: 36px;
+    opacity: .5;
 }
 
 .carousel-item .carousel-caption {
     font-size: 24px;
+    font-weight: bolder;
 }
 
 .carousel-item, .carousel.slide {
