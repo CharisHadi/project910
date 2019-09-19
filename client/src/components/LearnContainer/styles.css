@@ -14,8 +14,8 @@ button, input {
 }
   
 .grid-pic {
-    height: 50px;
-    width: 50px;
+    height: 65px;
+    width: 65px;
 }
 
 img .grid-pic{
@@ -39,7 +39,7 @@ form {
 }
 
 #statement {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 #direct {
