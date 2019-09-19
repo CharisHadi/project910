@@ -12,7 +12,7 @@ class LoginControl extends React.Component {
     let button;
 
     if (isLoggedIn) {
-      button = <Account />
+      button = <Account setLogOut={this.props.setLogOut}/>
     } else {
       button = <LoginSignup setLogIn={this.props.setLogIn} />;
     }

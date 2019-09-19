@@ -25,6 +25,7 @@ class Nav extends Component {
                     <LoginControl 
                         loggedIn = {this.props.loggedIn} 
                         setLogIn = {this.props.setLogIn}
+                        setLogOut={this.props.setLogOut}
                     />
                 </div>
             </div>

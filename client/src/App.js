@@ -24,11 +24,23 @@ class App extends Component {
     }
   
 
-  setLogIn = () => {
+  setLogIn = (res) => {
     this.setState({
       loggedIn: true,
+      userID: res.id,
+      name: res.name,
     });
-  }
+    console.log(this.state);
+  };
+
+  setLogOut = () => {
+    this.setState({
+      loggedIn: false,
+      userID: null,
+      name: null
+    });
+    console.log(this.state);
+  };
 
   render() {
     console.log("Addp.js: " + this.setLogIn);
@@ -38,6 +50,7 @@ class App extends Component {
         <Nav 
           loggedIn={this.state.loggedIn} 
           setLogIn={this.setLogIn}
+          setLogOut={this.setLogOut}
         />
         <Logo />
         <Slide />
