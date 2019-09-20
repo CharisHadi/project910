@@ -47,7 +47,8 @@ app.post('/api/addEvent', (req, res) => {
     location: req.body.location,
     latitude: req.body.latitude,
     longitude: req.body.longitude,
-    description: req.body.description
+    description: req.body.description,
+    userId: req.body.userId
   }})
   .then(([event, created]) => {
     console.log(event.get({

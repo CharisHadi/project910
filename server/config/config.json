@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "password",
-    "database": "project910db",
+    "database": "goGreendb",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },

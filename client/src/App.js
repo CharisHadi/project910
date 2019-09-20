@@ -18,7 +18,7 @@ const MapWrapped = withScriptjs(withGoogleMap(Map));
 class App extends Component {
   
     state = {
-      loggedIn: false,
+      loggedIn: true,
       userID: "00000000000",
       name: "test_user"
     }
