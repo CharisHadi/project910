@@ -23,12 +23,10 @@ module.exports = function (sequelize, DataTypes) {
 
     
    UserEvent.associate = function(models) {
-    UserEvent.belongsToMany(models.Event, {
-      through: 'UserEvents',
+    UserEvent.belongsTo(models.Event, {
         foreignKey: 'userId'
     });
-    UserEvent.belongsToMany(models.User, {
-      through: 'UserEvents',
+    UserEvent.belongsTo(models.User, {
         foreignkey: 'eventId'
     });
    };

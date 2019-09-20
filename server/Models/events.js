@@ -29,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
   });
   Event.associate = function(models) {
     Event.belongsToMany(models.User, {
-      through: 'UserEvents',
+      through: 'creators',
       foreignKey: 'eventId'
     });
   };

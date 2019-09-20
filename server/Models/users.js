@@ -39,7 +39,7 @@ module.exports = function (sequelize, DataTypes) {
   });
   User.associate = function(models) {
     User.belongsToMany(models.Event, {
-      through: 'UserEvents',
+      through: 'attendees',
       foreignkey: 'id'
     });
   };
