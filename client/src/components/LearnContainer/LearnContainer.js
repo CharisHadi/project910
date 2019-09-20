@@ -26,6 +26,7 @@ function LearnContainer() {
                     {learnCardComponents}
                 </Row>
             </Container>
+            <div id="hidden"></div>
         </div>
     )
 }

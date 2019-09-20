@@ -1,39 +1,39 @@
 import React from "react";
 import axios from "axios";
 import EventsTable from "../../EventsTable/EventsTable"
+import AutoComplete from "../../AutocompleteSearch/AutocompleteSearch"
 import "./styles.css";
 
 class MyEventsBtn extends React.Component {
     state = {
         eventsList: []
     };
+
+    componentDidMount() {
+    axios.get('/api/getEvents')
+        .then( response => {
+            // handle success
+            let userEvents = response.data;
+            userEvents = userEvents.map(element => {
+                //parse data wanted into object
+                var eventItem = {                       
+                    event: element.event,
+                    time: element.time,
+                    location: element.location
+                }
+                return eventItem;
+            });
+            //update state
+            this.setState({eventsList: userEvents});
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+    }
     
     render() {
-        var self = this;
-        axios.get('/api/getEvents')
-            .then(function (response) {
-                // handle success
-                const userEvents = response.data;
-                userEvents.forEach(function(element) {
-                    //parse data wanted into object
-                    var eventItem = {                       
-                        event: element.event,
-                        time: element.time,
-                        location: element.location
-                    }
-                    //push data into array
-                    console.log(eventItem);
-                    self.state.eventsList.push(eventItem);
-                    //self.setState({eventsList: self.state.eventsList});
-                });
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
-            .finally(function () {
-                //console.log(self.state.eventsList);s
-            });
+        console.log(this.state.eventsList)
         
     return (
         <div className="nav-button">

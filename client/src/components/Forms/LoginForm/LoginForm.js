@@ -31,6 +31,8 @@ class LoginForm extends Component {
     }
 
     render() {
+        
+        console.log("loginform: " , this.props);
         return (
             <form>
                 <div className="form-group">
