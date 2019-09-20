@@ -48,20 +48,3 @@ form {
     color: #000;
     font-weight: bolder;
 }
-
-@media only screen and (max-width: 1336px) {
-    #purpose {
-        font-size: 100px;
-        position: absolute;
-        top: 15%;
-        left: 10%;
-    }
-
-    #statement {
-        font-size: 28px;
-        position: absolute;
-        top: 35%;
-        left: 10%;
-    }
-
-}

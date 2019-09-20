@@ -37,3 +37,8 @@ table, th, td {
 .fa-calendar-check {
     padding-right: 3px;
 }
+
+.event-header {
+    text-align: center;
+    width: 100%;
+}

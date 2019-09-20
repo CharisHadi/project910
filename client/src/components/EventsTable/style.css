@@ -4,5 +4,12 @@ tb {
 
 .muted-button {
     float: left;
-    display: block;
+}
+
+.muted-button2 {
+    float: right;
+}
+
+.custom-table {
+    border: none;
 }

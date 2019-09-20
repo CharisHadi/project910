@@ -51,12 +51,12 @@ class MyEventsBtn extends React.Component {
                 </button>
             </div>
             <div className="modal-body" id="my-events">
-            <table>
+            <table className="event-header">
                 <thead>
                     <tr>
-                        <th>event</th>
-                        <th>time</th> 
-                        <th>location</th>
+                        <th>Event</th>
+                        <th>Time</th> 
+                        <th>Location</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -8,13 +8,13 @@ class EventsTable extends React.Component {
         console.log(this.props);
 
         return (
-        <tr>
+        <tr className="custom-table">
             <td>{this.props.event}</td>
             <td>{this.props.time}</td> 
             <td>{this.props.location}</td>
             <td>
                 <button className="button muted-button">Edit</button>
-                <button className="button muted-button">Delete</button>
+                <button className="button muted-button2">Delete</button>
             </td>
         </tr>
         )
