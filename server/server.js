@@ -41,21 +41,22 @@ app.get('/api/getEvents', (req, res) => {
 // API route to add new event to DB
 app.post('/api/addEvent', (req, res) => {
   console.log(req.body);
-  db.Event.findOrCreate({ where: {
+  db.Event.create({
     event: req.body.event, 
     time: req.body.time, 
     location: req.body.location,
     latitude: req.body.latitude,
     longitude: req.body.longitude,
-    description: req.body.description
-  }})
-  .then(([event, created]) => {
-    console.log(event.get({
-      plain: true
-  }))
+    description: req.body.description,
+    users: [
+      {userId: req.body.userId}
+      ]
+  }, {
+    include: [User]
+  })
   console.log(created);
   res.send("created");
-  });
+
 });
 
 
