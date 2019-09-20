@@ -44,3 +44,11 @@ textarea {
 .btn-primary, .btn-primary:hover, .btn-primary:visited, .btn-primary:active {
     background-color: #378C2E;
 }
+
+.autocomplete-dropdown-container {
+    float: left;
+    font-size: 14px;
+    height: 100px;
+    width: 100%;
+    overflow: scroll;
+}

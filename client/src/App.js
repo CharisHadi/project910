@@ -16,7 +16,6 @@ import "./App.css";
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
 class App extends Component {
-  
     state = {
       loggedIn: false,
       userID: "00000000000",

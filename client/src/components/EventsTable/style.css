@@ -1,3 +1,15 @@
 tb {
     border: 1px solid black;
 }
+
+.muted-button {
+    float: left;
+}
+
+.muted-button2 {
+    float: right;
+}
+
+.custom-table {
+    border: none;
+}
