@@ -27,7 +27,11 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: true,
     }
   });
-
-
+  Event.associate = function(models) {
+    Event.belongsToMany(models.User, {
+      through: 'creators',
+      foreignKey: 'eventId'
+    });
+  };
   return Event;
 };

@@ -27,6 +27,7 @@ class Nav extends Component {
                         loggedIn = {this.props.loggedIn} 
                         setLogIn = {this.props.setLogIn}
                         setLogOut={this.props.setLogOut}
+                        userID = {this.props.userID}
                     />
                     <NavMessage />
                 </div>

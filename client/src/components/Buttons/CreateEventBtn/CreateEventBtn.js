@@ -55,7 +55,8 @@ class CreateEventBtn extends React.Component {
                 location: this.state.location,
                 latitude: res.lat,
                 longitude: res.lng,
-                description: this.state.details
+                description: this.state.details,
+                userId: this.props.userID
             })
         )
         .then(function (res) {

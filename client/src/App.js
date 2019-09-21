@@ -5,17 +5,14 @@ import Slide from "./components/Slide/Slide";
 import LearnContainer from "./components/LearnContainer/LearnContainer";
 import Game from "./components/Game";
 import GoogleApiWrapper from "./components/Map/Map";
-import MyEventsBtn from "./components/Buttons/MyEventsBtn/MyEventsBtn";
-import CreateEventBtn from "./components/Buttons/CreateEventBtn/CreateEventBtn";
 import "./App.css";
 
 class App extends Component {
     state = {
-      loggedIn: false,
+      loggedIn: true,
       userID: "00000000000",
       name: "test_user"
     }
-  
 
   setLogIn = (res) => {
     this.setState({
@@ -44,6 +41,7 @@ class App extends Component {
           loggedIn={this.state.loggedIn} 
           setLogIn={this.setLogIn}
           setLogOut={this.setLogOut}
+          userID = {this.state.userID}
         />
         <Logo />
         <Slide />
@@ -51,10 +49,6 @@ class App extends Component {
         <div id="map-start"></div>
       <GoogleApiWrapper />
       <Game />
-      <MyEventsBtn />
-      <CreateEventBtn 
-        userID = {this.state.userID}
-      />
     </div>
   );
 }
