@@ -10,7 +10,7 @@ import "./App.css";
 class App extends Component {
     state = {
       loggedIn: true,
-      userID: "10212511920787598",
+      userID: "00000000000",
       name: "test_user"
     }
 

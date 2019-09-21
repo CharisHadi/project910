@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import axios from "axios";
 import "./styles.css";
 
 export class MapContainer extends Component {
@@ -28,6 +29,33 @@ export class MapContainer extends Component {
     }
   }
 
+  componentDidMount() {        
+    axios.get("/api/getEvents/")
+      .then( response => {
+        // handle success
+        let userEvents = response.data;
+        userEvents = userEvents.map(element => {
+            //parse data wanted into object
+            var eventItem = {                       
+                event: element.event,
+                time: element.time,
+                description: element.description,
+                latitude: element.latitude,
+                longitude: element.longitude
+            }
+            return eventItem;
+        });
+        //update state
+        
+       console.log(userEvents);
+        this.setState({markers: userEvents});
+        })
+        .catch(function (error) {
+            // handle error
+            console.log(error);
+        })
+      }
+
   displayMarkers = () => {
     return this.state.markers.map((marker, index) => {
       return <Marker key={index} id={index} position={{
@@ -39,7 +67,6 @@ export class MapContainer extends Component {
   }
 
   render() {
-
     const mapStyles = {
       width: '90%',
       height: '550px',
