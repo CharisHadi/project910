@@ -1,9 +1,11 @@
 #login {
     margin-top: 0;
     margin-right: 0;
+    display:inline-block;
 }
 
 .nav-button {
     margin: 0;
     padding: 0;
 }
+

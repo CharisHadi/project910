@@ -4,4 +4,6 @@
     font-family: 'DM Sans', sans-serif;
     font-size: 20px;
     font-weight: bolder;
+    float: right;
+    display:inline-block;
 }

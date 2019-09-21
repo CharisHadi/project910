@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
-import EventsTable from "../../EventsTable/EventsTable"
-import AutoComplete from "../../AutocompleteSearch/AutocompleteSearch"
+import EventsTable from "../../EventsTable/EventsTable";
+import AutoComplete from "../../AutocompleteSearch/AutocompleteSearch";
+import moment from "moment";
 import "./styles.css";
 
 class MyEventsBtn extends React.Component {
@@ -17,9 +18,10 @@ class MyEventsBtn extends React.Component {
             let userEvents = response.data;
             userEvents = userEvents.map(element => {
                 //parse data wanted into object
+                let editedTime = moment(element.time).format('LLLL');
                 var eventItem = {                       
                     event: element.event,
-                    time: element.time,
+                    time: editedTime,
                     location: element.location
                 }
                 return eventItem;
