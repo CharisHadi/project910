@@ -9,8 +9,12 @@ class MyEventsBtn extends React.Component {
         eventsList: []
     };
 
+
+
     componentDidMount() {
-    axios.get('/api/getEvents')
+        console.log("/api/getEvents/" + this.props.userID);
+        let url = "/api/getEvents/" + this.props.userID;
+    axios.get(url)
         .then( response => {
             // handle success
             let userEvents = response.data;
@@ -33,7 +37,7 @@ class MyEventsBtn extends React.Component {
     }
     
     render() {
-        console.log(this.state.eventsList)
+        //console.log(this.state.eventsList)
         
     return (
         <div className="nav-button">

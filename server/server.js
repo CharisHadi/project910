@@ -31,11 +31,37 @@ app.post('/api/login', (req, res) => {
   });
 });
 
-//API Route to find all events having to do with user
+//API Route to find all events 
 app.get('/api/getEvents', (req, res) => {
   db.Event.findAll().then(eventList => {
     res.send(eventList);
 })
+})
+
+//API Route to find all events having to do with user
+app.get('/api/getEvents/:id', (req, res) => {
+
+  let arrayOfIds = [];
+  //search through associations for events that the user corresponds to
+  db.UserEvent.findAll({
+    where: {
+      userId: req.params.id
+    }
+  }).then(results => {
+    //parse through data to get an array of Ids to search through
+     for (var i = 0; i < results.length; i++) {
+      arrayOfIds.push(results[i].eventId);
+    }
+    //grab the events corresponding to user and send them
+    db.Event.findAll({
+      where: {
+        id: arrayOfIds
+      }
+    }).then(eventList => {
+      res.send(eventList);
+    })
+  });
+
 })
 
 // API route to add new event to DB

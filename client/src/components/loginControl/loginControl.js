@@ -20,7 +20,9 @@ class LoginControl extends React.Component {
                 <CreateEventBtn 
                   userID = {this.props.userID}
                 />
-                <MyEventsBtn />
+                <MyEventsBtn 
+                  userID = {this.props.userID}
+                />
               </React.Fragment>
     } else {
       buttons = <LoginSignup setLogIn={this.props.setLogIn} />;
