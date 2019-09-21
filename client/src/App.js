@@ -1,20 +1,13 @@
 import React, { Component } from "react";
-import {
-  withGoogleMap,
-  withScriptjs
-} from "react-google-maps";
 import Nav from "./components/Nav/Nav";
 import Logo from "./components/Logo/Logo";
 import Slide from "./components/Slide/Slide";
 import LearnContainer from "./components/LearnContainer/LearnContainer";
 import Game from "./components/Game";
-import Map from "./components/Map/Map";
+import GoogleApiWrapper from "./components/Map/Map";
 import "./App.css";
 
-const MapWrapped = withScriptjs(withGoogleMap(Map));
-
 class App extends Component {
-  
     state = {
       loggedIn: true,
       userID: "00000000000",
@@ -53,14 +46,8 @@ class App extends Component {
         <Logo />
         <Slide />
         <LearnContainer />
-      <MapWrapped 
-        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${
-          process.env.REACT_APP_GOOGLE_KEY
-        }`}
-        loadingElement={<div style={{ height: `90%`, width: `80%`, position: `absolute`, top: `205%`, right: `10%` }} />}
-        containerElement={<div style={{ height: `90%`, width: `80%`, position: `absolute`, top: `205%`, right: `10%` }} />}
-        mapElement={<div style={{ height: `90%` }} />}
-      />
+        <div id="map-start"></div>
+      <GoogleApiWrapper />
       <Game />
     </div>
   );

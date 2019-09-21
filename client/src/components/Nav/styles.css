@@ -1,3 +1,5 @@
+/* NAV CSS */
+
 #test, #learn, #home, #events, #myevents, #login, #accountInfo {
     color: white;
     float: right;
@@ -37,4 +39,9 @@ nav {
     top: 0;
     width: 100%;
     z-index: 1;
+}
+
+#map-start {
+    position: absolute;
+    top: 200%;
 }

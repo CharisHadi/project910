@@ -12,9 +12,8 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: #e1e1e1;
     min-width: 160px;
-    height: 400px;
     padding: 12px 16px;
     z-index: 0;
 }
@@ -22,33 +21,72 @@
 .dropdown-content h3 {
     text-align: center;
     font-weight: bolder;
-    font-size: 18px;
-}
-
-#item2 h3 {
-    font-size: 15.95px;
+    font-size: 24px;
 }
 
 .dropdown-content p {
-    font-size: 12px;
+    font-size: 20px;
 }
 
-/* Add:hover right after .dropdown */
 .dropdown .dropdown-content {
     display: block;
+    width: 640%;
+    height: 300px;
 }
 
-#item1, #item2, #item3, #item4, #item5, #item6, #item7 {
-    top: 55px;
+.row #item1 {
+    position: absolute;
+    left: -20%;
+    top: 50px;
 }
 
-.col .dropdown .dropdown-content #item1 {
-    left: -100px;
+.row #item2 {
+    position: absolute;
+    left: -120%;
+    top: 50px;
+}
+
+.row #item3 {
+    position: absolute;
+    left: -220%;
+    top: 50px;
+}
+
+.row #item4 {
+    position: absolute;
+    left: -320%;
+    top: 50px;
+}
+
+.row #item5 {
+    position: absolute;
+    left: -420%;
+    top: 50px;
+}
+
+.row #item6 {
+    position: absolute;
+    left: -520%;
+    top: 50px;
+}
+
+.dropdown.col .row {
+    position: absolute;
+    left: 10px;
     width: 100%;
-    position: relative;
+    transition: 180s;
+}
+
+.dropdown.col {
+    text-align: center;
 }
 
 .col {
     margin: 0;
     padding: 1px;
+}
+
+@media only screen and (max-width: 1336px) {
+
+
 }

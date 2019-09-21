@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./styles.css";
 import LoginControl from "../loginControl/loginControl";
+import NavMessage from "../NavMessage/NavMessage";
 
 class Nav extends Component {
 
@@ -28,6 +29,7 @@ class Nav extends Component {
                         setLogOut={this.props.setLogOut}
                         userID = {this.props.userID}
                     />
+                    <NavMessage />
                 </div>
             </div>
         
