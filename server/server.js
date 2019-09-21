@@ -41,23 +41,36 @@ app.get('/api/getEvents', (req, res) => {
 // API route to add new event to DB
 app.post('/api/addEvent', (req, res) => {
   console.log(req.body);
-  db.Event.create({
+  db.Event.create({ //create events
     event: req.body.event, 
     time: req.body.time, 
     location: req.body.location,
     latitude: req.body.latitude,
     longitude: req.body.longitude,
     description: req.body.description,
-    users: [
-      {userId: req.body.userId}
-      ]
-  }, {
-    include: [User]
+  }).then(function(res) {  
+    //console.log("id: ",  res.dataValues.id); 
+    createAssociation(req.body.userId, res.dataValues.id, true, true)    // This is generate primary key.
   })
-  console.log(created);
   res.send("created");
-
 });
+
+// create association
+function createAssociation(userId, eventId, attending, creator) {
+    db.UserEvent.findOrCreate({where: {
+    userId: userId,
+    eventId: eventId, 
+    attending: true,
+    creator: true
+  }})
+  .then(([user, created]) => {
+    console.log(user.get({
+      plain: true
+  }))
+  console.log(created);
+  });
+
+}
 
 
 // Send every other request to the React app
