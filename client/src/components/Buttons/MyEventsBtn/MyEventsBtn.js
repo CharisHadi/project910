@@ -38,7 +38,7 @@ class MyEventsBtn extends React.Component {
     return (
         <div className="nav-button">
         <button type="button" className="btn btn-primary fixed-btn1" data-toggle="modal" data-target="#exampleModal2">
-        <i class="far fa-calendar-check"></i> my events
+        <i className="far fa-calendar-check"></i> my events
         </button>
 
         <div className="modal fade" id="exampleModal2" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
