@@ -76,7 +76,7 @@ class CreateEventBtn extends React.Component {
     return (
         <div className="nav-button">
             <button type="button" className="btn btn-primary fixed-btn2" data-toggle="modal" data-target="#exampleModal1">
-            <i class="far fa-calendar-plus"></i> create event
+            <i className="far fa-calendar-plus"></i> create event
             </button>
 
             <div className="modal fade" id="exampleModal1" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

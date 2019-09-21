@@ -40,3 +40,8 @@ nav {
     width: 100%;
     z-index: 1;
 }
+
+#map-start {
+    position: absolute;
+    top: 200%;
+}
