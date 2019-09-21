@@ -7,7 +7,7 @@
 
 .fixed-btn2, .fixed-btn2:hover, .fixed-btn2:active, .fixed-btn2:visited {
     position: fixed;
-    top: 105px;
+    top: 125px;
     right: -145px;
     background-color: #534f44;
     font-size: 16px;
