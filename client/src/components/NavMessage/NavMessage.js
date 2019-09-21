@@ -3,7 +3,7 @@ import "./styles.css";
 
 function NavMessage(props) {
     return (
-        <div className="nav-message">{props.isLoggedIn ? 'USER' : 'Join the movement!'}</div>
+        <div className="nav-message">{props.theMessage}</div>
     )
 }
 

@@ -31,33 +31,72 @@ app.post('/api/login', (req, res) => {
   });
 });
 
-//API Route to find all events having to do with user
+//API Route to find all events 
 app.get('/api/getEvents', (req, res) => {
   db.Event.findAll().then(eventList => {
     res.send(eventList);
 })
 })
 
+//API Route to find all events having to do with user
+app.get('/api/getEvents/:id', (req, res) => {
+
+  let arrayOfIds = [];
+  //search through associations for events that the user corresponds to
+  db.UserEvent.findAll({
+    where: {
+      userId: req.params.id
+    }
+  }).then(results => {
+    //parse through data to get an array of Ids to search through
+     for (var i = 0; i < results.length; i++) {
+      arrayOfIds.push(results[i].eventId);
+    }
+    //grab the events corresponding to user and send them
+    db.Event.findAll({
+      where: {
+        id: arrayOfIds
+      }
+    }).then(eventList => {
+      res.send(eventList);
+    })
+  });
+
+})
+
 // API route to add new event to DB
 app.post('/api/addEvent', (req, res) => {
   console.log(req.body);
-  db.Event.create({
+  db.Event.create({ //create events
     event: req.body.event, 
     time: req.body.time, 
     location: req.body.location,
     latitude: req.body.latitude,
     longitude: req.body.longitude,
     description: req.body.description,
-    users: [
-      {userId: req.body.userId}
-      ]
-  }, {
-    include: [User]
+  }).then(function(res) {  
+    //console.log("id: ",  res.dataValues.id); 
+    createAssociation(req.body.userId, res.dataValues.id, true, true)    // This is generate primary key.
   })
-  console.log(created);
   res.send("created");
-
 });
+
+// create association
+function createAssociation(userId, eventId, attending, creator) {
+    db.UserEvent.findOrCreate({where: {
+    userId: userId,
+    eventId: eventId, 
+    attending: true,
+    creator: true
+  }})
+  .then(([user, created]) => {
+    console.log(user.get({
+      plain: true
+  }))
+  console.log(created);
+  });
+
+}
 
 
 // Send every other request to the React app

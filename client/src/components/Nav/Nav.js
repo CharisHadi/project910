@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./styles.css";
 import LoginControl from "../loginControl/loginControl";
-import NavMessage from "../NavMessage/NavMessage";
 
 class Nav extends Component {
 
@@ -24,12 +23,12 @@ class Nav extends Component {
                     <a id="events" className="nav-item nav-link" href="#map-start">find events/centers</a>
                     <a id="test" className="nav-item nav-link" href="#game-container">knowledge check</a>
                     <LoginControl 
+                        name={this.props.name}
                         loggedIn = {this.props.loggedIn} 
                         setLogIn = {this.props.setLogIn}
                         setLogOut={this.props.setLogOut}
                         userID = {this.props.userID}
                     />
-                    <NavMessage />
                 </div>
             </div>
         

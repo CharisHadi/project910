@@ -37,11 +37,5 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false,
     },
   });
-  User.associate = function(models) {
-    User.belongsToMany(models.Event, {
-      through: 'attendees',
-      foreignkey: 'id'
-    });
-  };
   return User;
 };
