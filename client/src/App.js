@@ -38,6 +38,7 @@ class App extends Component {
     return (
       <div style={{ width: "100vw", height: "100vh" }}>
         <Nav 
+          name={this.state.name}
           loggedIn={this.state.loggedIn} 
           setLogIn={this.setLogIn}
           setLogOut={this.setLogOut}

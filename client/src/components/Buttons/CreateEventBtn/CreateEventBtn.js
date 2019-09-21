@@ -41,8 +41,7 @@ class CreateEventBtn extends React.Component {
         handleSubmit = event => {
         var formattedDate = moment(this.state.datetime).format('YYYY-MM-DD hh:mm:ss');
 
-        console.log(this.props.userID);
-        geocodeByAddress("4361 Collins Way")
+        geocodeByAddress(this.state.location)
         .then(results => {
             console.log("results:" ,results)
             return(getLatLng(results[0]))

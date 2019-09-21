@@ -18,12 +18,9 @@ class LoginComponent extends React.Component {
       .catch(function (error) {
         console.log(error);
       });
-        console.log(this.props);
         this.props.setLogIn(response)
     }
     render() {
-      
-        console.log("bflofing: " , this.props);
 
     return (                    
       <FacebookLogin
