@@ -1,0 +1,10 @@
+.info-window {
+    font-family: 'Tajawal', sans-serif;
+    height: 100px;
+    width: 200px;
+    padding: 0 20px;
+}
+
+.info-window button {
+    margin: 0 auto;
+}
