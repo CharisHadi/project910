@@ -21,10 +21,10 @@ class Account extends React.Component {
                 </button>
             </div>
             <div className="modal-body">
-                CONTENT HERE
+                Are you sure you want to sign out?
             </div>
             <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" className="btn btn-secondary" data-dismiss="modal">Back</button>
                 <button type="button" className="btn btn-primary" data-dismiss="modal" onClick ={this.props.setLogOut}>Sign out</button>
             </div>
             </div>

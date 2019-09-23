@@ -32,7 +32,7 @@ class LoginControl extends React.Component {
     }
 
     return (
-      <div>
+      <div id="nav-message">
         {buttons}
         <NavMessage 
           theMessage = {message}
