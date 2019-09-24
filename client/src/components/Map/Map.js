@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import axios from "axios";
 import "./styles.css";
 
@@ -9,23 +9,26 @@ export class MapContainer extends Component {
 
     this.state = {
       markers: [{lat: 45.524404, lng: -122.693},
-              {event: 'bottle drop', time: '', description: '', latitude: 45.520565, longitude: -123.094},
-              {event: 'bottle drop', time: '', description: '', latitude: 45.416228, longitude: -122.792},
-              {event: 'bottle drop', time: '', description: '', latitude: 45.486997, longitude: -122.773},
-              {event: 'bottle drop', time: '', description: '', latitude: 45.592372, longitude: -122.678},
-              {event: 'bottle drop', time: '', description: '', latitude: 45.447247, longitude: -122.601},
-              {event: 'bottle drop', time: '', description: '', latitude: 45.528003, longitude: -122.535},
-              {event: 'bottle drop', time: '', description: '', latitude: 45.536971, longitude: -122.423},
-              {event: 'bottle drop', time: '', description: '', latitude: 45.498444, longitude: -122.418},
-              {event: 'bottle drop', time: '', description: '', latitude: 44.957031, longitude: -123.032},
-              {event: 'bottle drop', time: '', description: '', latitude: 44.952902, longitude: -122.984},
-              {event: 'bottle drop', time: '', description: '', latitude: 44.88588, longitude: -123.033},
-              {event: 'bottle drop', time: '', description: '', latitude: 44.576066, longitude: -123.26},
-              {event: 'bottle drop', time: '', description: '', latitude: 44.633667, longitude: -123.079},
-              {event: 'bottle drop', time: '', description: '', latitude: 44.635959, longitude: -124.051},
-              {event: 'bottle drop', time: '', description: '', latitude: 44.050294, longitude: -123.125},
-              {event: 'bottle drop', time: '', description: '', latitude: 45.841021, longitude: -119.302},
-              {event: 'bottle drop', time: '', description: '', latitude: 44.027762, longitude: -116.944}]
+              {event: 'Bottle drop', time: '', description: '', latitude: 45.520565, longitude: -123.094},
+              {event: 'Bottle drop', time: '', description: '', latitude: 45.416228, longitude: -122.792},
+              {event: 'Bottle drop', time: '', description: '', latitude: 45.486997, longitude: -122.773},
+              {event: 'Bottle drop', time: '', description: '', latitude: 45.592372, longitude: -122.678},
+              {event: 'Bottle drop', time: '', description: '', latitude: 45.447247, longitude: -122.601},
+              {event: 'Bottle drop', time: '', description: '', latitude: 45.528003, longitude: -122.535},
+              {event: 'Bottle drop', time: '', description: '', latitude: 45.536971, longitude: -122.423},
+              {event: 'Bottle drop', time: '', description: '', latitude: 45.498444, longitude: -122.418},
+              {event: 'Bottle drop', time: '', description: '', latitude: 44.957031, longitude: -123.032},
+              {event: 'Bottle drop', time: '', description: '', latitude: 44.952902, longitude: -122.984},
+              {event: 'Bottle drop', time: '', description: '', latitude: 44.88588, longitude: -123.033},
+              {event: 'Bottle drop', time: '', description: '', latitude: 44.576066, longitude: -123.26},
+              {event: 'Bottle drop', time: '', description: '', latitude: 44.633667, longitude: -123.079},
+              {event: 'Bottle drop', time: '', description: '', latitude: 44.635959, longitude: -124.051},
+              {event: 'Bottle drop', time: '', description: '', latitude: 44.050294, longitude: -123.125},
+              {event: 'Bottle drop', time: '', description: '', latitude: 45.841021, longitude: -119.302},
+              {event: 'Bottle drop', time: '', description: '', latitude: 44.027762, longitude: -116.944}],
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {},
     }
   }
 
@@ -62,9 +65,26 @@ export class MapContainer extends Component {
        lat: marker.latitude,
        lng: marker.longitude
      }}
-     onClick={() => console.log("You clicked me!")} />
+     name={marker.event}
+     onClick={this.onMarkerClick} />
     })
   }
+
+  onMarkerClick = (props, marker, e) =>
+  this.setState({
+    selectedPlace: props,
+    activeMarker: marker,
+    showingInfoWindow: true
+  });
+
+  onMapClicked = (props) => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      })
+    }
+  };
 
   render() {
     const mapStyles = {
@@ -81,9 +101,21 @@ export class MapContainer extends Component {
             google={this.props.google}
             zoom={8}
             style={ mapStyles }
-            initialCenter={{ lat: 45.5051, lng: -122.6750}}
+            initialCenter={{ lat: 45.5051, lng: -122.6750}} 
+            onClick={this.onMapClicked}
           >
             {this.displayMarkers()}
+            <InfoWindow 
+              marker={this.state.activeMarker}
+              visible={this.state.showingInfoWindow}>
+            <div className="info-window">
+              <h5>{this.state.selectedPlace.name}</h5>
+              <p>Details: {this.state.selectedPlace.description}</p>
+              <p>Time/Hours: {this.state.selectedPlace.time}</p>
+              <p>Address:</p>
+              <button>Join Event</button>
+            </div>
+            </InfoWindow>
           </Map>
       </div>
     );
