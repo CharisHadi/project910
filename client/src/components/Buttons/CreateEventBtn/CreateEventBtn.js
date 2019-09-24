@@ -4,6 +4,7 @@ import moment from "moment";
 import EventForm from "../../Forms/EventForm/EventForm";
 import "./styles.css";
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import MyEventsBtn from "../MyEventsBtn/MyEventsBtn"
 
 class CreateEventBtn extends React.Component {
 

@@ -8,7 +8,9 @@ export class MapContainer extends Component {
     super(props);
 
     this.state = {
-      markers: [{lat: 45.524404, lng: -122.693},
+      latitude: this.props.latitude,
+      longitude: this.props.longitude,
+      markers: [
               {event: 'bottle drop', time: '', description: '', latitude: 45.520565, longitude: -123.094},
               {event: 'bottle drop', time: '', description: '', latitude: 45.416228, longitude: -122.792},
               {event: 'bottle drop', time: '', description: '', latitude: 45.486997, longitude: -122.773},
@@ -29,7 +31,9 @@ export class MapContainer extends Component {
     }
   }
 
-  componentDidMount() {        
+  componentDidMount() {     
+    console.log(`latitude:  ${this.state.latitude} \n
+                longitude: ${this.state.longitude}`);   
     axios.get("/api/getEvents/")
       .then( response => {
         // handle success
@@ -81,8 +85,8 @@ export class MapContainer extends Component {
             google={this.props.google}
             zoom={8}
             style={ mapStyles }
-            initialCenter={{ lat: 45.5051, lng: -122.6750}}
-          >
+            initialCenter={{ lat: this.state.latitude, lng: this.state.longitude}}
+            >
             {this.displayMarkers()}
           </Map>
       </div>

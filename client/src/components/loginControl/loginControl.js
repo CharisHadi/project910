@@ -18,7 +18,10 @@ class LoginControl extends React.Component {
     if (isLoggedIn) {
       message = 'Hello, ' + this.props.name;
       buttons = <React.Fragment> 
-                <Account setLogOut={this.props.setLogOut}/> 
+                <Account 
+                  userID = {this.props.userID}
+                  setLogOut={this.props.setLogOut}
+                /> 
                 <CreateEventBtn 
                   userID = {this.props.userID}
                 />

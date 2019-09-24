@@ -21,7 +21,7 @@ class EventForm extends Component {
                     <input 
                     type="text" 
                     className="form-control input"
-                    placeholder="Zip Code"
+                    placeholder="Enter Address"
                     onChange={this.props.handleLocationChange}
                     />
                 </div>
@@ -41,7 +41,7 @@ class EventForm extends Component {
                     rows="10"
                     />
                 </div>
-                <AutoComplete />
+                <AutoComplete onChange={this.props.handleLocationChange}/>
             </form>
         )
     }

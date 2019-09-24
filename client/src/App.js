@@ -5,13 +5,17 @@ import Slide from "./components/Slide/Slide";
 import LearnContainer from "./components/LearnContainer/LearnContainer";
 import Game from "./components/Game";
 import GoogleApiWrapper from "./components/Map/Map";
+import AutoComplete from "./components/AutocompleteSearch/AutocompleteSearch";
 import "./App.css";
 
 class App extends Component {
     state = {
       loggedIn: true,
-      userID: "00000000000",
-      name: "test_user"
+      userID: "0000000000",
+      name: "test_user",
+      latitude: 39.7392,
+      longitude:  -104.9903,
+      location: ""
     }
 
   setLogIn = (res) => {
@@ -42,14 +46,18 @@ class App extends Component {
           loggedIn={this.state.loggedIn} 
           setLogIn={this.setLogIn}
           setLogOut={this.setLogOut}
-          userID = {this.state.userID}
+          userID={this.state.userID}
         />
         <Logo />
         <Slide />
         <LearnContainer />
         <div id="map-start"></div>
-      <GoogleApiWrapper />
-      <Game />
+        
+        <GoogleApiWrapper 
+          latitude={this.state.latitude}
+          longitude={this.state.longitude}        
+        />
+        <Game />
     </div>
   );
 }
