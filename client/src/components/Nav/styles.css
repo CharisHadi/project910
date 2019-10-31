@@ -5,12 +5,26 @@
     float: right;
     font-family: 'Tajawal', sans-serif;
     display: block;
-    padding: .5rem 1rem;
+    padding: .5rem .5rem;
     text-decoration: none;
+}
+
+#nav-message .nav-message {
+    position: absolute;
+    right: 5px;
+}
+
+.nav-message {
+    position: absolute;
+    top: 105%;
 }
 
 #accountInfo {
     padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 5px;
+    margin-left: 20px;
+    margin-top: 2px;
 }
 
 #navbarNavAltMarkup {

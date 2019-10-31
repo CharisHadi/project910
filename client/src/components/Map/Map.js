@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import axios from "axios";
+import moment from "moment";
 import "./styles.css";
 
 export class MapContainer extends Component {
@@ -8,6 +9,9 @@ export class MapContainer extends Component {
     super(props);
 
     this.state = {
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {},
       latitude: this.props.latitude,
       longitude: this.props.longitude,
       markers: [
@@ -31,9 +35,13 @@ export class MapContainer extends Component {
     }
   }
 
+  attendEvent = () => {
+    debugger
+    console.log("HELLOOOOOO: ", this.props.userId);
+    alert("hey, listen");
+  }
+
   componentDidMount() {     
-    console.log(`latitude:  ${this.state.latitude} \n
-                longitude: ${this.state.longitude}`);   
     axios.get("/api/getEvents/")
       .then( response => {
         // handle success
@@ -42,16 +50,17 @@ export class MapContainer extends Component {
             //parse data wanted into object
             var eventItem = {                       
                 event: element.event,
-                time: element.time,
+                time: moment(element.time).format('LLLL'),
                 description: element.description,
                 latitude: element.latitude,
-                longitude: element.longitude
+                longitude: element.longitude,
+                location: element.location
             }
             return eventItem;
         });
         //update state
         
-       console.log(userEvents);
+       //console.log(userEvents);
         this.setState({markers: userEvents});
         })
         .catch(function (error) {
@@ -66,9 +75,29 @@ export class MapContainer extends Component {
        lat: marker.latitude,
        lng: marker.longitude
      }}
-     onClick={() => console.log("You clicked me!")} />
+     name={marker.event}
+     description={marker.description}
+     time={marker.time}
+     location={marker.location}
+     onClick={this.onMarkerClick} />
     })
   }
+
+  onMarkerClick = (props, marker, e) =>
+  this.setState({
+    selectedPlace: props,
+    activeMarker: marker,
+    showingInfoWindow: true
+  });
+
+  onMapClicked = (props) => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      })
+    }
+  };
 
   render() {
     const mapStyles = {
@@ -86,8 +115,20 @@ export class MapContainer extends Component {
             zoom={8}
             style={ mapStyles }
             initialCenter={{ lat: this.state.latitude, lng: this.state.longitude}}
-            >
+            onClick={this.onMapClicked}
+          >
             {this.displayMarkers()}
+            <InfoWindow 
+              marker={this.state.activeMarker}
+              visible={this.state.showingInfoWindow}>
+            <div className="info-window">
+              <h5>{this.state.selectedPlace.name}</h5>
+              <p>Details: {this.state.selectedPlace.description}</p>
+              <p>Time/Hours: {this.state.selectedPlace.time}</p>
+              <p>Address: {this.state.selectedPlace.location}</p>
+              <button onClick={this.attendButton} className="btn btn-secondary">Join Event</button>
+            </div>
+            </InfoWindow>
           </Map>
       </div>
     );

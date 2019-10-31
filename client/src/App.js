@@ -5,7 +5,6 @@ import Slide from "./components/Slide/Slide";
 import LearnContainer from "./components/LearnContainer/LearnContainer";
 import Game from "./components/Game";
 import GoogleApiWrapper from "./components/Map/Map";
-import AutoComplete from "./components/AutocompleteSearch/AutocompleteSearch";
 import "./App.css";
 
 class App extends Component {
@@ -13,16 +12,19 @@ class App extends Component {
       loggedIn: true,
       userID: "0000000000",
       name: "test_user",
-      latitude: 39.7392,
-      longitude:  -104.9903,
+      latitude: 44.949,
+      longitude:  -123.035,
       location: ""
     }
 
   setLogIn = (res) => {
     this.setState({
       loggedIn: true,
-      userID: res.id,
+      userID: res.fbid,
       name: res.name,
+      latitude: res.latitude,
+      longitude: res.longitude,
+      location: res.location
     });
     console.log(this.state);
   };
@@ -37,8 +39,6 @@ class App extends Component {
   };
 
   render() {
-    console.log("Addp.js: " + this.setLogIn);
-
     return (
       <div style={{ width: "100vw", height: "100vh" }}>
         <Nav 
@@ -55,7 +55,8 @@ class App extends Component {
         
         <GoogleApiWrapper 
           latitude={this.state.latitude}
-          longitude={this.state.longitude}        
+          longitude={this.state.longitude} 
+          userID={this.state.userID}       
         />
         <Game />
     </div>

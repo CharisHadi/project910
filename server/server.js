@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 
 // Define API routes here
 app.post('/api/editAccount', (req, res) => {
-  //console.log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " , req.body);
+  console.log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " , req.body);
   db.User.update(
     { 
     nickname: req.body.nickname,
@@ -39,8 +39,7 @@ app.post('/api/login', (req, res) => {
     console.log(user.get({
       plain: true
   }))
-  console.log(created);
-  res.send("created");
+  res.send(user);
   });
 });
 

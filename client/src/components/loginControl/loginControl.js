@@ -1,16 +1,13 @@
 import React from "react";
 import LoginSignup from "../Buttons/LoginBtn/LoginSignup";
 import Account from "../Buttons/AccountBtn/AccountBtn";
-import CreateEventBtn from "./../Buttons/CreateEventBtn/CreateEventBtn";
 import MyEventsBtn from "./../Buttons/MyEventsBtn/MyEventsBtn";
 import NavMessage from "../NavMessage/NavMessage";
 
 class LoginControl extends React.Component {
   
 
-  render() {
-        console.log("loginbutton: " , this.props);
-    
+  render() {    
     const isLoggedIn = this.props.loggedIn;
     let buttons, message;
 
@@ -22,9 +19,6 @@ class LoginControl extends React.Component {
                   userID = {this.props.userID}
                   setLogOut={this.props.setLogOut}
                 /> 
-                <CreateEventBtn 
-                  userID = {this.props.userID}
-                />
                 <MyEventsBtn 
                   userID = {this.props.userID}
                 />
@@ -35,7 +29,7 @@ class LoginControl extends React.Component {
     }
 
     return (
-      <div>
+      <div id="nav-message">
         {buttons}
         <NavMessage 
           theMessage = {message}

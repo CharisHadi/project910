@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import AutoComplete from "../../AutocompleteSearch/AutocompleteSearch"
 import axios from "axios";
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
 import "./styles.css"; 
