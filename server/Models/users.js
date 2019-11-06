@@ -21,11 +21,11 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: true,
     },
     latitude: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
         allowNull: true,
     },
     longitude: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.FLOAT,
         allowNull: true,
     },
     email: {

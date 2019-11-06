@@ -1,11 +1,12 @@
 import React from "react";
 import axios from "axios";
 import EventsTable from "../../EventsTable/EventsTable";
-import AutoComplete from "../../AutocompleteSearch/AutocompleteSearch";
+import CreateEventBtn from "../CreateEventBtn/CreateEventBtn";
 import moment from "moment";
 import "./styles.css";
 
 class MyEventsBtn extends React.Component {
+    
     state = {
         eventsList: []
     };
@@ -48,6 +49,11 @@ class MyEventsBtn extends React.Component {
         <button type="button" className="btn btn-primary fixed-btn1" data-toggle="modal" data-target="#exampleModal2">
         <i className="far fa-calendar-check"></i> my events
         </button>
+
+        <CreateEventBtn 
+            userID = {this.props.userID}
+            myEventsSetState = {this.myEventsSetState} 
+        />
 
         <div className="modal fade" id="exampleModal2" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog" role="document">

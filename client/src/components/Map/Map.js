@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import axios from "axios";
+import moment from "moment";
 import "./styles.css";
 
 export class MapContainer extends Component {
@@ -8,31 +9,39 @@ export class MapContainer extends Component {
     super(props);
 
     this.state = {
-      markers: [{lat: 45.524404, lng: -122.693},
-              {event: 'Bottle drop', time: '', description: '', latitude: 45.520565, longitude: -123.094},
-              {event: 'Bottle drop', time: '', description: '', latitude: 45.416228, longitude: -122.792},
-              {event: 'Bottle drop', time: '', description: '', latitude: 45.486997, longitude: -122.773},
-              {event: 'Bottle drop', time: '', description: '', latitude: 45.592372, longitude: -122.678},
-              {event: 'Bottle drop', time: '', description: '', latitude: 45.447247, longitude: -122.601},
-              {event: 'Bottle drop', time: '', description: '', latitude: 45.528003, longitude: -122.535},
-              {event: 'Bottle drop', time: '', description: '', latitude: 45.536971, longitude: -122.423},
-              {event: 'Bottle drop', time: '', description: '', latitude: 45.498444, longitude: -122.418},
-              {event: 'Bottle drop', time: '', description: '', latitude: 44.957031, longitude: -123.032},
-              {event: 'Bottle drop', time: '', description: '', latitude: 44.952902, longitude: -122.984},
-              {event: 'Bottle drop', time: '', description: '', latitude: 44.88588, longitude: -123.033},
-              {event: 'Bottle drop', time: '', description: '', latitude: 44.576066, longitude: -123.26},
-              {event: 'Bottle drop', time: '', description: '', latitude: 44.633667, longitude: -123.079},
-              {event: 'Bottle drop', time: '', description: '', latitude: 44.635959, longitude: -124.051},
-              {event: 'Bottle drop', time: '', description: '', latitude: 44.050294, longitude: -123.125},
-              {event: 'Bottle drop', time: '', description: '', latitude: 45.841021, longitude: -119.302},
-              {event: 'Bottle drop', time: '', description: '', latitude: 44.027762, longitude: -116.944}],
       showingInfoWindow: false,
       activeMarker: {},
       selectedPlace: {},
+      latitude: this.props.latitude,
+      longitude: this.props.longitude,
+      markers: [
+              {event: 'bottle drop', time: '', description: '', latitude: 45.520565, longitude: -123.094},
+              {event: 'bottle drop', time: '', description: '', latitude: 45.416228, longitude: -122.792},
+              {event: 'bottle drop', time: '', description: '', latitude: 45.486997, longitude: -122.773},
+              {event: 'bottle drop', time: '', description: '', latitude: 45.592372, longitude: -122.678},
+              {event: 'bottle drop', time: '', description: '', latitude: 45.447247, longitude: -122.601},
+              {event: 'bottle drop', time: '', description: '', latitude: 45.528003, longitude: -122.535},
+              {event: 'bottle drop', time: '', description: '', latitude: 45.536971, longitude: -122.423},
+              {event: 'bottle drop', time: '', description: '', latitude: 45.498444, longitude: -122.418},
+              {event: 'bottle drop', time: '', description: '', latitude: 44.957031, longitude: -123.032},
+              {event: 'bottle drop', time: '', description: '', latitude: 44.952902, longitude: -122.984},
+              {event: 'bottle drop', time: '', description: '', latitude: 44.88588, longitude: -123.033},
+              {event: 'bottle drop', time: '', description: '', latitude: 44.576066, longitude: -123.26},
+              {event: 'bottle drop', time: '', description: '', latitude: 44.633667, longitude: -123.079},
+              {event: 'bottle drop', time: '', description: '', latitude: 44.635959, longitude: -124.051},
+              {event: 'bottle drop', time: '', description: '', latitude: 44.050294, longitude: -123.125},
+              {event: 'bottle drop', time: '', description: '', latitude: 45.841021, longitude: -119.302},
+              {event: 'bottle drop', time: '', description: '', latitude: 44.027762, longitude: -116.944}]
     }
   }
 
-  componentDidMount() {        
+  attendEvent = () => {
+    debugger
+    console.log("HELLOOOOOO: ", this.props.userId);
+    alert("hey, listen");
+  }
+
+  componentDidMount() {     
     axios.get("/api/getEvents/")
       .then( response => {
         // handle success
@@ -41,16 +50,17 @@ export class MapContainer extends Component {
             //parse data wanted into object
             var eventItem = {                       
                 event: element.event,
-                time: element.time,
+                time: moment(element.time).format('LLLL'),
                 description: element.description,
                 latitude: element.latitude,
-                longitude: element.longitude
+                longitude: element.longitude,
+                location: element.location
             }
             return eventItem;
         });
         //update state
         
-       console.log(userEvents);
+       //console.log(userEvents);
         this.setState({markers: userEvents});
         })
         .catch(function (error) {
@@ -66,6 +76,9 @@ export class MapContainer extends Component {
        lng: marker.longitude
      }}
      name={marker.event}
+     description={marker.description}
+     time={marker.time}
+     location={marker.location}
      onClick={this.onMarkerClick} />
     })
   }
@@ -101,7 +114,7 @@ export class MapContainer extends Component {
             google={this.props.google}
             zoom={8}
             style={ mapStyles }
-            initialCenter={{ lat: 45.5051, lng: -122.6750}} 
+            initialCenter={{ lat: this.state.latitude, lng: this.state.longitude}}
             onClick={this.onMapClicked}
           >
             {this.displayMarkers()}
@@ -112,8 +125,8 @@ export class MapContainer extends Component {
               <h5>{this.state.selectedPlace.name}</h5>
               <p>Details: {this.state.selectedPlace.description}</p>
               <p>Time/Hours: {this.state.selectedPlace.time}</p>
-              <p>Address:</p>
-              <button>Join Event</button>
+              <p>Address: {this.state.selectedPlace.location}</p>
+              <button onClick={this.attendButton} className="btn btn-secondary">Join Event</button>
             </div>
             </InfoWindow>
           </Map>

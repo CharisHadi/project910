@@ -1,4 +1,5 @@
 import React from "react";
+import AccountForm from "../../Forms/AccountForm/AccountForm";
 import "./styles.css";
 
 class Account extends React.Component {
@@ -20,9 +21,13 @@ class Account extends React.Component {
                 <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
             <div className="modal-body">
-                Are you sure you want to sign out?
+            <AccountForm 
+                userID = {this.props.userID}
+            />
             </div>
+
             <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Back</button>
                 <button type="button" className="btn btn-primary" data-dismiss="modal" onClick ={this.props.setLogOut}>Sign out</button>

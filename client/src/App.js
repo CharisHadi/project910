@@ -10,15 +10,21 @@ import "./App.css";
 class App extends Component {
     state = {
       loggedIn: true,
-      userID: "00000000000",
-      name: "test_user"
+      userID: "0000000000",
+      name: "test_user",
+      latitude: 44.949,
+      longitude:  -123.035,
+      location: ""
     }
 
   setLogIn = (res) => {
     this.setState({
       loggedIn: true,
-      userID: res.id,
+      userID: res.fbid,
       name: res.name,
+      latitude: res.latitude,
+      longitude: res.longitude,
+      location: res.location
     });
     console.log(this.state);
   };
@@ -33,8 +39,6 @@ class App extends Component {
   };
 
   render() {
-    console.log("Addp.js: " + this.setLogIn);
-
     return (
       <div style={{ width: "100vw", height: "100vh" }}>
         <Nav 
@@ -42,14 +46,19 @@ class App extends Component {
           loggedIn={this.state.loggedIn} 
           setLogIn={this.setLogIn}
           setLogOut={this.setLogOut}
-          userID = {this.state.userID}
+          userID={this.state.userID}
         />
         <Logo />
         <Slide />
         <LearnContainer />
         <div id="map-start"></div>
-      <GoogleApiWrapper />
-      <Game />
+        
+        <GoogleApiWrapper 
+          latitude={this.state.latitude}
+          longitude={this.state.longitude} 
+          userID={this.state.userID}       
+        />
+        <Game />
     </div>
   );
 }

@@ -5,7 +5,7 @@ class EventsTable extends React.Component {
     
 
     render() {
-        console.log(this.props);
+        //console.log(this.props);
 
         return (
         <tr className="custom-table">
@@ -13,8 +13,7 @@ class EventsTable extends React.Component {
             <td>{this.props.time}</td> 
             <td>{this.props.location}</td>
             <td>
-                <button className="button muted-button">Edit</button>
-                <button className="button muted-button2">Delete</button>
+                <button className="button muted-button2">Not Going</button>
             </td>
         </tr>
         )

@@ -11,14 +11,12 @@ class LoginComponent extends React.Component {
         email: response.email,
         fbid: response.id,
       })
-      .then(function (res) {
-        console.log(this.props)
-        
+      .then((res) => {
+        this.props.setLogIn(res.data);
       })
       .catch(function (error) {
         console.log(error);
       });
-        this.props.setLogIn(response)
     }
     render() {
 

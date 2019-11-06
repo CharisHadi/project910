@@ -1,16 +1,13 @@
 import React from "react";
 import LoginSignup from "../Buttons/LoginBtn/LoginSignup";
 import Account from "../Buttons/AccountBtn/AccountBtn";
-import CreateEventBtn from "./../Buttons/CreateEventBtn/CreateEventBtn";
 import MyEventsBtn from "./../Buttons/MyEventsBtn/MyEventsBtn";
 import NavMessage from "../NavMessage/NavMessage";
 
 class LoginControl extends React.Component {
   
 
-  render() {
-        console.log("loginbutton: " , this.props);
-    
+  render() {    
     const isLoggedIn = this.props.loggedIn;
     let buttons, message;
 
@@ -18,10 +15,10 @@ class LoginControl extends React.Component {
     if (isLoggedIn) {
       message = 'Hello, ' + this.props.name;
       buttons = <React.Fragment> 
-                <Account setLogOut={this.props.setLogOut}/> 
-                <CreateEventBtn 
+                <Account 
                   userID = {this.props.userID}
-                />
+                  setLogOut={this.props.setLogOut}
+                /> 
                 <MyEventsBtn 
                   userID = {this.props.userID}
                 />

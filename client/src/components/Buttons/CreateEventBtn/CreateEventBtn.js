@@ -2,8 +2,8 @@ import React from "react";
 import axios from "axios";
 import moment from "moment";
 import EventForm from "../../Forms/EventForm/EventForm";
-import "./styles.css";
 import { geocodeByAddress, getLatLng } from 'react-places-autocomplete';
+import "./styles.css";
 
 class CreateEventBtn extends React.Component {
 
@@ -38,7 +38,7 @@ class CreateEventBtn extends React.Component {
         })
     }
 
-        handleSubmit = event => {
+    handleSubmit = event => {
         var formattedDate = moment(this.state.datetime).format('YYYY-MM-DD hh:mm:ss');
 
         geocodeByAddress(this.state.location)
@@ -58,9 +58,9 @@ class CreateEventBtn extends React.Component {
                 userId: this.props.userID
             })
         )
-        .then(function (res) {
-            console.log(res)
-        })
+        .then((res) => 
+            console.log(this.props.myEventsSetState)
+        )
         .catch(function (error) {
             console.log(error);
         }
@@ -68,7 +68,7 @@ class CreateEventBtn extends React.Component {
             console.log(err)
         })
 
-        }
+    }
 
     render() {
 

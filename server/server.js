@@ -13,11 +13,24 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define API routes here
+app.post('/api/editAccount', (req, res) => {
+  console.log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOO: " , req.body);
+  db.User.update(
+    { 
+    nickname: req.body.nickname,
+    location: req.body.location,
+    latitude: req.body.latitude,
+    longitude: req.body.longitude
+    }, 
+    {returning: true, where: {fbid: req.body.userId} }
+  )
+  res.send("Updated");
+}); 
 
 // API route to find or add user to DB
 app.post('/api/login', (req, res) => {
   console.log(req.body);
-  db.User.findOrCreate({where: {
+    db.User.findOrCreate({where: {
     name: req.body.name, 
     email: req.body.name, 
     fbid: req.body.fbid
@@ -26,8 +39,7 @@ app.post('/api/login', (req, res) => {
     console.log(user.get({
       plain: true
   }))
-  console.log(created);
-  res.send("created");
+  res.send(user);
   });
 });
 
@@ -35,7 +47,7 @@ app.post('/api/login', (req, res) => {
 app.get('/api/getEvents', (req, res) => {
   db.Event.findAll().then(eventList => {
     res.send(eventList);
-})
+  })
 })
 
 //API Route to find all events having to do with user

@@ -35,7 +35,6 @@ class LearnCard extends Component {
                 </span>
                 <Row>
                 {this.state.isHovering && <LearnHover id={this.props.id} materialName={this.props.materialName} info={this.props.info} />}
-                {console.log(this.props)}
                 </Row>
                 </Col>       
             )
